@@ -5,22 +5,21 @@ using System.Threading.Tasks;
 using api.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers{}
+namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class UsersControllers : ControllerBase
+public class UsersController : ControllerBase
 {
 	private readonly AppDbContext _context;
 
-	public UsersControllers(AppDbContext context)
+	public UsersController(AppDbContext context)
 	{
 		_context = context;
-		
 	}
 	[HttpGet]
-	public ActionResult GetAll()
+	public async Task<ActionResult> GetAll()
 	{
-		return Ok();
+		return Ok("Olá");
 	}
 }
