@@ -1,61 +1,38 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
+using API.Persistence.IPersistences;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Persistence;
 
 public class DefaultPersistence : IDefaultPersistence
 {
 	private readonly AppDbContext _context;
+
 	public DefaultPersistence(AppDbContext context)
 	{
 		_context = context;
+		_context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 	}
 
-	public async Task<bool> Add<T>(T entity) where T : class
+	public async void Add<T>(T entity) where T : class
 	{
-		try
-		{
-			await _context.AddAsync<T>(entity);
-			return await _context.SaveChangesAsync() > 0;
-		}
-		catch (Exception ex)
-		{
-			throw new Exception("", ex);
-		}
-	}
-	public async Task<bool> Update<T>(T entity) where T : class
-	{
-		try
-		{
-			_context.Update<T>(entity);
-			return await _context.SaveChangesAsync() > 0;
-		}
-		catch (System.Exception ex)
-		{
-			throw new Exception(ex.Message, ex);
-		}
-	}
-	public async Task<bool> Delete<T>(T entity) where T : class
-	{
-		try
-		{
-			_context.Remove<T>(entity);
-			return await _context.SaveChangesAsync() > 0;
-		}
-		catch (System.Exception ex)
-		{
-			throw new Exception(ex.Message, ex);
-		}
+		_context.Add(entity);
 	}
 
-	public Task<T> Get<T>(int id) where T : class
+	public void Delete<T>(T entity) where T : class
 	{
-		throw new NotImplementedException();
+		_context.Remove(entity);
 	}
 
-	public Task<IEnumerable<T>> GetAll<T>(T entity) where T : class
+	public async Task<T> GetById<T>(int id) where T : class
+	{
+		return await _context.FindAsync<T>(id);
+	}
+
+	public async Task<bool> SaveChanges() => await _context.SaveChangesAsync() > 0;
+	
+
+	public void Update<T>(T entity) where T : class
 	{
 		throw new NotImplementedException();
 	}

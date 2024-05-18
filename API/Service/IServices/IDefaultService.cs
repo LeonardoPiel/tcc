@@ -2,11 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using API.Dto;
 
-namespace API.Service;
+namespace API.Service.IServices;
 
-public interface IUserService : IService
+public interface IDefaultService
 {
-	
 }

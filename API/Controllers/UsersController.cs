@@ -1,25 +1,28 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using api.Persistence;
+using API.Dto;
+using API.Helpers;
+using API.Service;
+using API.Service.IServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-public class UsersController : ControllerBase
+public class UsersController : DefaultController<UsersService>
 {
-	private readonly AppDbContext _context;
-
-	public UsersController(AppDbContext context)
+	public UsersController(AppDbContext context, IDefaultService service) : base(context, service)
 	{
-		_context = context;
 	}
+
 	[HttpGet]
-	public async Task<ActionResult> GetAll()
+	public async Task<ActionResult> GetByUserName([FromQuery] UserParams queryParams, [FromBody] string userName)
 	{
-		return Ok("Olá");
+		try
+		{
+			var users = await _service.GetByUserNameAsync(queryParams, userName);
+			return Ok<UserDto>(users);
+		}
+		catch (System.Exception ex)
+		{
+			throw new Exception(ex.Message, ex);
+		}
 	}
 }

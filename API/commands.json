@@ -1,4 +1,0 @@
-{
-  "run": "dotnet watch --no-hot-reload",
-  "cert": "dotnet dev-certs https --trust"
-}
