@@ -218,8 +218,6 @@ dynamic deserializeParam<T>(
             return MovimentacaoLancamentoViewRow(data);
           case LancamentoTipoRow:
             return LancamentoTipoRow(data);
-          case KeepAliveRow:
-            return KeepAliveRow(data);
           case ProjetoRow:
             return ProjetoRow(data);
           case StatusTarefaFaseRow:

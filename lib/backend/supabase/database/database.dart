@@ -11,7 +11,6 @@ export 'tables/anexo_biblioteca.dart';
 export 'tables/projeto_colaborador.dart';
 export 'tables/movimentacao_lancamento_view.dart';
 export 'tables/lancamento_tipo.dart';
-export 'tables/keep_alive.dart';
 export 'tables/projeto.dart';
 export 'tables/status_tarefa_fase.dart';
 export 'tables/fase_projeto.dart';
