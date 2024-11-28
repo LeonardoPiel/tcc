@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'componente_credenciais_model.dart';
 export 'componente_credenciais_model.dart';
 
@@ -54,7 +52,7 @@ class _ComponenteCredenciaisWidgetState
       children: [
         Flexible(
           child: Padding(
-            padding: EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(12.0),
             child: Container(
               width: 500.0,
               height: MediaQuery.sizeOf(context).height * 0.8,
@@ -63,15 +61,15 @@ class _ComponenteCredenciaisWidgetState
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(1.0, -1.0),
+                      alignment: const AlignmentDirectional(1.0, -1.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 8.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 8.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderRadius: 8.0,
                           buttonSize: 40.0,
@@ -100,7 +98,7 @@ class _ComponenteCredenciaisWidgetState
                         future: CredencialClienteTable().queryRows(
                           queryFn: (q) => q.eqOrNull(
                             'cliente_id',
-                            widget!.cliente?.id,
+                            widget.cliente?.id,
                           ),
                         ),
                         builder: (context, snapshot) {
@@ -125,7 +123,7 @@ class _ComponenteCredenciaisWidgetState
                             padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewCredencialClienteRowList.length,
-                            separatorBuilder: (_, __) => SizedBox(height: 8.0),
+                            separatorBuilder: (_, __) => const SizedBox(height: 8.0),
                             itemBuilder: (context, listViewIndex) {
                               final listViewCredencialClienteRow =
                                   listViewCredencialClienteRowList[
@@ -134,7 +132,7 @@ class _ComponenteCredenciaisWidgetState
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),
@@ -147,7 +145,7 @@ class _ComponenteCredenciaisWidgetState
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -189,7 +187,7 @@ class _ComponenteCredenciaisWidgetState
                                               letterSpacing: 0.0,
                                             ),
                                       ),
-                                    ].divide(SizedBox(height: 8.0)),
+                                    ].divide(const SizedBox(height: 8.0)),
                                   ),
                                 ),
                               );
@@ -198,7 +196,7 @@ class _ComponenteCredenciaisWidgetState
                         },
                       ),
                     ),
-                  ].divide(SizedBox(height: 12.0)),
+                  ].divide(const SizedBox(height: 12.0)),
                 ),
               ),
             ),

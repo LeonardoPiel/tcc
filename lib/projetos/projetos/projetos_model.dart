@@ -1,25 +1,11 @@
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/menu/side_menu/side_menu_widget.dart';
 import '/paginas/app_nav_bar/app_nav_bar_widget.dart';
-import '/projetos/componente_projeto/componente_projeto_widget.dart';
-import 'dart:math';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'projetos_widget.dart' show ProjetosWidget;
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 
 class ProjetosModel extends FlutterFlowModel<ProjetosWidget> {
   ///  Local state fields for this page.

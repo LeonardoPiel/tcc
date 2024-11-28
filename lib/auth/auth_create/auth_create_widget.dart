@@ -4,13 +4,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'auth_create_model.dart';
 export 'auth_create_model.dart';
 
@@ -59,15 +54,15 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0.9, 0.9),
-            end: Offset(1.0, 1.0),
+            begin: const Offset(0.9, 0.9),
+            end: const Offset(1.0, 1.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: Offset(0, 0.524),
-            end: Offset(0, 0),
+            begin: const Offset(0, 0.524),
+            end: const Offset(0, 0),
           ),
         ],
       ),
@@ -103,7 +98,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                 Expanded(
                   flex: 5,
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
+                    alignment: const AlignmentDirectional(0.0, -1.0),
                     child: Container(
                       width: double.infinity,
                       height: double.infinity,
@@ -113,9 +108,9 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                             FlutterFlowTheme.of(context).primaryBackground,
                             FlutterFlowTheme.of(context).accent1
                           ],
-                          stops: [0.0, 1.0],
-                          begin: AlignmentDirectional(1.0, 0.0),
-                          end: AlignmentDirectional(-1.0, 0),
+                          stops: const [0.0, 1.0],
+                          begin: const AlignmentDirectional(1.0, 0.0),
+                          end: const AlignmentDirectional(-1.0, 0),
                         ),
                         borderRadius: BorderRadius.circular(0.0),
                       ),
@@ -125,21 +120,21 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
               Expanded(
                 flex: 5,
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16.0),
                       child: Container(
                         width: double.infinity,
                         height: double.infinity,
-                        constraints: BoxConstraints(
+                        constraints: const BoxConstraints(
                           maxWidth: 570.0,
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16.0),
                         ),
-                        alignment: AlignmentDirectional(0.0, -1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -148,7 +143,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                               Container(
                                 width: double.infinity,
                                 height: 140.0,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(16.0),
                                     bottomRight: Radius.circular(16.0),
@@ -156,16 +151,16 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                     topRight: Radius.circular(0.0),
                                   ),
                                 ),
-                                alignment: AlignmentDirectional(-1.0, 0.0),
+                                alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 12.0, 0.0),
                                         child: Icon(
                                           Icons.flourescent_rounded,
@@ -188,9 +183,9 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.0, 0.0),
+                                alignment: const AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 32.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -207,7 +202,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                             ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 24.0),
                                         child: Text(
                                           'Dados para login',
@@ -220,9 +215,9 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller: _model
@@ -230,7 +225,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                             focusNode:
                                                 _model.emailAddressFocusNode,
                                             autofocus: true,
-                                            autofillHints: [
+                                            autofillHints: const [
                                               AutofillHints.email
                                             ],
                                             obscureText: false,
@@ -307,16 +302,16 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller:
                                                 _model.passwordTextController,
                                             focusNode: _model.passwordFocusNode,
                                             autofocus: true,
-                                            autofillHints: [
+                                            autofillHints: const [
                                               AutofillHints.password
                                             ],
                                             obscureText:
@@ -413,9 +408,9 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
-                                        child: Container(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: TextFormField(
                                             controller: _model
@@ -423,7 +418,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                             focusNode:
                                                 _model.passwordConfirmFocusNode,
                                             autofocus: true,
-                                            autofillHints: [
+                                            autofillHints: const [
                                               AutofillHints.password
                                             ],
                                             obscureText: !_model
@@ -522,10 +517,10 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(1.0, -1.0),
+                                            const AlignmentDirectional(1.0, -1.0),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 16.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -538,7 +533,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                                       .text) {
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(
-                                                  SnackBar(
+                                                  const SnackBar(
                                                     content: Text(
                                                       'Passwords don\'t match!',
                                                     ),
@@ -575,9 +570,9 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                             options: FFButtonOptions(
                                               width: 200.0,
                                               height: 44.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -592,7 +587,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -605,7 +600,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
 
                                       // You will have to add an action on this rich text to go to your login page.
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 12.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
@@ -617,7 +612,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                               'AuthLogin',
                                               extra: <String, dynamic>{
                                                 kTransitionInfoKey:
-                                                    TransitionInfo(
+                                                    const TransitionInfo(
                                                   hasTransition: true,
                                                   transitionType:
                                                       PageTransitionType.fade,
@@ -632,7 +627,7 @@ class _AuthCreateWidgetState extends State<AuthCreateWidget>
                                                 .textScaler,
                                             text: TextSpan(
                                               children: [
-                                                TextSpan(
+                                                const TextSpan(
                                                   text: 'Já possui uma conta? ',
                                                   style: TextStyle(),
                                                 ),

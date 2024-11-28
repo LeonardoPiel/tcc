@@ -9,7 +9,7 @@ class NivelUsuarioTable extends SupabaseTable<NivelUsuarioRow> {
 }
 
 class NivelUsuarioRow extends SupabaseDataRow {
-  NivelUsuarioRow(Map<String, dynamic> data) : super(data);
+  NivelUsuarioRow(super.data);
 
   @override
   SupabaseTable get table => NivelUsuarioTable();

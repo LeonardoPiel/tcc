@@ -10,7 +10,7 @@ class AnexoBibliotecaTable extends SupabaseTable<AnexoBibliotecaRow> {
 }
 
 class AnexoBibliotecaRow extends SupabaseDataRow {
-  AnexoBibliotecaRow(Map<String, dynamic> data) : super(data);
+  AnexoBibliotecaRow(super.data);
 
   @override
   SupabaseTable get table => AnexoBibliotecaTable();

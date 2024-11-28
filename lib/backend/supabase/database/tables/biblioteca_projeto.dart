@@ -10,7 +10,7 @@ class BibliotecaProjetoTable extends SupabaseTable<BibliotecaProjetoRow> {
 }
 
 class BibliotecaProjetoRow extends SupabaseDataRow {
-  BibliotecaProjetoRow(Map<String, dynamic> data) : super(data);
+  BibliotecaProjetoRow(super.data);
 
   @override
   SupabaseTable get table => BibliotecaProjetoTable();

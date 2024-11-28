@@ -9,16 +9,10 @@ import '/flutter_flow/form_field_controller.dart';
 import '/menu/side_menu/side_menu_widget.dart';
 import '/paginas/app_nav_bar/app_nav_bar_widget.dart';
 import '/projetos/componente_projeto/componente_projeto_widget.dart';
-import 'dart:math';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'projetos_model.dart';
 export 'projetos_model.dart';
 
@@ -77,8 +71,8 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(30.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(30.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -96,8 +90,8 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(30.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(30.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -133,7 +127,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
             wrapWithModel(
               model: _model.appNavBarModel,
               updateCallback: () => safeSetState(() {}),
-              child: AppNavBarWidget(),
+              child: const AppNavBarWidget(),
             ),
             Flexible(
               child: Row(
@@ -143,15 +137,15 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                   wrapWithModel(
                     model: _model.sideMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: SideMenuWidget(
+                    child: const SideMenuWidget(
                       selectedNav: 'projeto',
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        constraints: BoxConstraints(
+                        constraints: const BoxConstraints(
                           maxHeight: 1000.0,
                         ),
                         decoration: BoxDecoration(
@@ -165,7 +159,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                           children: [
                             Flexible(
                               child: Padding(
-                                padding: EdgeInsets.all(12.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: FutureBuilder<List<ProjetoRow>>(
                                   future: ProjetoTable().queryRows(
                                     queryFn: (q) => q,
@@ -207,7 +201,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                             child: Column(
                                               children: [
                                                 Align(
-                                                  alignment: Alignment(0.0, 0),
+                                                  alignment: const Alignment(0.0, 0),
                                                   child: TabBar(
                                                     labelColor:
                                                         FlutterFlowTheme.of(
@@ -239,7 +233,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                         FlutterFlowTheme.of(
                                                                 context)
                                                             .primary,
-                                                    tabs: [
+                                                    tabs: const [
                                                       Tab(
                                                         text: 'Projetos Ativos',
                                                       ),
@@ -310,7 +304,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                           containerProjetosVarAtivo[
                                                                               containerProjetosVarAtivoIndex];
                                                                       return Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             12.0,
                                                                             12.0,
@@ -378,7 +372,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                             decoration:
                                                                                 BoxDecoration(
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              boxShadow: [
+                                                                              boxShadow: const [
                                                                                 BoxShadow(
                                                                                   blurRadius: 4.0,
                                                                                   color: Color(0x34090F13),
@@ -390,13 +384,13 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                               ],
                                                                               borderRadius: BorderRadius.circular(8.0),
                                                                               border: Border.all(
-                                                                                color: containerProjetosVarAtivoItem.id == _model.projeto?.id ? FlutterFlowTheme.of(context).primary : Color(0x00000000),
+                                                                                color: containerProjetosVarAtivoItem.id == _model.projeto?.id ? FlutterFlowTheme.of(context).primary : const Color(0x00000000),
                                                                                 width: 2.0,
                                                                               ),
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsets.all(8.0),
+                                                                              padding: const EdgeInsets.all(8.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.min,
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -418,7 +412,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Align(
-                                                                                    alignment: AlignmentDirectional(1.0, 1.0),
+                                                                                    alignment: const AlignmentDirectional(1.0, 1.0),
                                                                                     child: InkWell(
                                                                                       splashColor: Colors.transparent,
                                                                                       focusColor: Colors.transparent,
@@ -512,7 +506,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                         containerProjetosVarInativo[
                                                                             containerProjetosVarInativoIndex];
                                                                     return Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           12.0,
                                                                           12.0,
@@ -591,7 +585,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                               BoxDecoration(
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            boxShadow: [
+                                                                            boxShadow: const [
                                                                               BoxShadow(
                                                                                 blurRadius: 4.0,
                                                                                 color: Color(0x34090F13),
@@ -605,14 +599,14 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                                 BorderRadius.circular(8.0),
                                                                             border:
                                                                                 Border.all(
-                                                                              color: containerProjetosVarInativoItem.id == _model.projeto?.id ? FlutterFlowTheme.of(context).primary : Color(0x00000000),
+                                                                              color: containerProjetosVarInativoItem.id == _model.projeto?.id ? FlutterFlowTheme.of(context).primary : const Color(0x00000000),
                                                                               width: 2.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(8.0),
+                                                                                const EdgeInsets.all(8.0),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.min,
@@ -633,7 +627,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                                   ),
                                                                                 ),
                                                                                 Align(
-                                                                                  alignment: AlignmentDirectional(1.0, 1.0),
+                                                                                  alignment: const AlignmentDirectional(1.0, 1.0),
                                                                                   child: InkWell(
                                                                                     splashColor: Colors.transparent,
                                                                                     focusColor: Colors.transparent,
@@ -703,7 +697,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                           .viewInsetsOf(
                                                               context),
                                                       child:
-                                                          ComponenteProjetoWidget(),
+                                                          const ComponenteProjetoWidget(),
                                                     ),
                                                   );
                                                 },
@@ -713,10 +707,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                             text: 'Novo Projeto',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -735,7 +729,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 20.0)),
+                                        ].divide(const SizedBox(width: 20.0)),
                                       ),
                                     );
                                   },
@@ -755,16 +749,16 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                   children: [
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.all(16.0),
+                                        padding: const EdgeInsets.all(16.0),
                                         child: Container(
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Text(
                                                   'Fases',
@@ -788,10 +782,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                   Flexible(
                                                     child: Container(
                                                       decoration:
-                                                          BoxDecoration(),
+                                                          const BoxDecoration(),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, -1.0),
                                                         child: Text(
                                                           'Nome',
@@ -818,10 +812,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                       Container(
                                                         width: 80.0,
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, -1.0),
                                                           child: Text(
                                                             'Início',
@@ -843,10 +837,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                       Container(
                                                         width: 80.0,
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, -1.0),
                                                           child: Text(
                                                             'Fim',
@@ -866,7 +860,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                         ),
                                                       ),
                                                     ].divide(
-                                                        SizedBox(width: 8.0)),
+                                                        const SizedBox(width: 8.0)),
                                                   ),
                                                 ],
                                               ),
@@ -915,7 +909,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                         listViewFasesFaseProjetoRowList
                                                             .length,
                                                     separatorBuilder: (_, __) =>
-                                                        SizedBox(height: 8.0),
+                                                        const SizedBox(height: 8.0),
                                                     itemBuilder: (context,
                                                         listViewFasesIndex) {
                                                       final listViewFasesFaseProjetoRow =
@@ -1088,7 +1082,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                         },
                                                         child: Container(
                                                           constraints:
-                                                              BoxConstraints(
+                                                              const BoxConstraints(
                                                             minHeight: 36.0,
                                                           ),
                                                           decoration:
@@ -1103,7 +1097,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                 : FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
-                                                            boxShadow: [
+                                                            boxShadow: const [
                                                               BoxShadow(
                                                                 blurRadius: 4.0,
                                                                 color: Color(
@@ -1121,7 +1115,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsets.all(
+                                                                const EdgeInsets.all(
                                                                     8.0),
                                                             child: Row(
                                                               mainAxisSize:
@@ -1195,11 +1189,11 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                                 0.0,
                                                                           ),
                                                                     ),
-                                                                  ].divide(SizedBox(
+                                                                  ].divide(const SizedBox(
                                                                       width:
                                                                           8.0)),
                                                                 ),
-                                                              ].divide(SizedBox(
+                                                              ].divide(const SizedBox(
                                                                   width: 8.0)),
                                                             ),
                                                           ),
@@ -1209,14 +1203,14 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                   );
                                                 },
                                               ),
-                                            ].divide(SizedBox(height: 12.0)),
+                                            ].divide(const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                       ),
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.all(16.0),
+                                        padding: const EdgeInsets.all(16.0),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -1228,10 +1222,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 12.0),
                                                   child: Text(
@@ -1251,10 +1245,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 16.0, 0.0, 0.0),
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   child: Form(
                                                     key: _model.formKey2,
@@ -1268,7 +1262,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                           CrossAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Container(
+                                                        SizedBox(
                                                           width:
                                                               double.infinity,
                                                           child: TextFormField(
@@ -1322,7 +1316,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -1389,7 +1383,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                               MainAxisSize.max,
                                                           children: [
                                                             Expanded(
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 200.0,
                                                                 child:
                                                                     TextFormField(
@@ -1445,7 +1439,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0x00000000),
                                                                         width:
@@ -1531,7 +1525,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                               ),
                                                               onPressed:
                                                                   () async {
-                                                                final _datePicked1Date =
+                                                                final datePicked1Date =
                                                                     await showDatePicker(
                                                                   context:
                                                                       context,
@@ -1589,17 +1583,17 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                   },
                                                                 );
 
-                                                                if (_datePicked1Date !=
+                                                                if (datePicked1Date !=
                                                                     null) {
                                                                   safeSetState(
                                                                       () {
                                                                     _model.datePicked1 =
                                                                         DateTime(
-                                                                      _datePicked1Date
+                                                                      datePicked1Date
                                                                           .year,
-                                                                      _datePicked1Date
+                                                                      datePicked1Date
                                                                           .month,
-                                                                      _datePicked1Date
+                                                                      datePicked1Date
                                                                           .day,
                                                                     );
                                                                   });
@@ -1655,7 +1649,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                               },
                                                             ),
                                                             Expanded(
-                                                              child: Container(
+                                                              child: SizedBox(
                                                                 width: 200.0,
                                                                 child:
                                                                     TextFormField(
@@ -1711,7 +1705,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0x00000000),
                                                                         width:
@@ -1799,7 +1793,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                               ),
                                                               onPressed:
                                                                   () async {
-                                                                final _datePicked2Date =
+                                                                final datePicked2Date =
                                                                     await showDatePicker(
                                                                   context:
                                                                       context,
@@ -1857,17 +1851,17 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                   },
                                                                 );
 
-                                                                if (_datePicked2Date !=
+                                                                if (datePicked2Date !=
                                                                     null) {
                                                                   safeSetState(
                                                                       () {
                                                                     _model.datePicked2 =
                                                                         DateTime(
-                                                                      _datePicked2Date
+                                                                      datePicked2Date
                                                                           .year,
-                                                                      _datePicked2Date
+                                                                      datePicked2Date
                                                                           .month,
-                                                                      _datePicked2Date
+                                                                      datePicked2Date
                                                                           .day,
                                                                     );
                                                                   });
@@ -1922,10 +1916,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                 });
                                                               },
                                                             ),
-                                                          ].divide(SizedBox(
+                                                          ].divide(const SizedBox(
                                                               width: 8.0)),
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           height: 12.0)),
                                                     ),
                                                   ),
@@ -1943,7 +1937,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1977,17 +1971,17 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                           (alertDialogContext) {
                                                                         return AlertDialog(
                                                                           title:
-                                                                              Text('Deletar Fase'),
+                                                                              const Text('Deletar Fase'),
                                                                           content:
                                                                               Text('Deseja realmente deletar a fase ${_model.faseProjeto?.nome}?'),
                                                                           actions: [
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                              child: Text('Cancelar'),
+                                                                              child: const Text('Cancelar'),
                                                                             ),
                                                                             TextButton(
                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                              child: Text('Confirmar'),
+                                                                              child: const Text('Confirmar'),
                                                                             ),
                                                                           ],
                                                                         );
@@ -2034,7 +2028,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: Duration(
+                                                                  duration: const Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -2051,7 +2045,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                           null)
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -2109,7 +2103,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             1.0, 1.0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
@@ -2168,7 +2162,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                         .primaryText,
                                                                   ),
                                                                 ),
-                                                                duration: Duration(
+                                                                duration: const Duration(
                                                                     milliseconds:
                                                                         4000),
                                                                 backgroundColor:
@@ -2210,7 +2204,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                         .primaryText,
                                                                   ),
                                                                 ),
-                                                                duration: Duration(
+                                                                duration: const Duration(
                                                                     milliseconds:
                                                                         4000),
                                                                 backgroundColor:
@@ -2249,7 +2243,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                       .primaryText,
                                                                 ),
                                                               ),
-                                                              duration: Duration(
+                                                              duration: const Duration(
                                                                   milliseconds:
                                                                       4000),
                                                               backgroundColor:
@@ -2270,14 +2264,14 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                       options: FFButtonOptions(
                                                         height: 40.0,
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
                                                                     16.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -2308,7 +2302,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                   ),
                                                 ],
                                               ),
-                                            ].divide(SizedBox(height: 12.0)),
+                                            ].divide(const SizedBox(height: 12.0)),
                                           ),
                                         ),
                                       ),
@@ -2318,14 +2312,14 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                               ),
                             if (_model.faseProjeto != null)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Container(
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 6.0,
                                         color: Color(0x1B090F13),
@@ -2335,7 +2329,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                         ),
                                       )
                                     ],
-                                    borderRadius: BorderRadius.only(
+                                    borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
                                       bottomRight: Radius.circular(0.0),
                                       topLeft: Radius.circular(16.0),
@@ -2349,15 +2343,15 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           child: Container(
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Text(
                                                     'Tarefas',
@@ -2383,10 +2377,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                       flex: 1,
                                                       child: Container(
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, -1.0),
                                                           child: Text(
                                                             'Nome',
@@ -2410,10 +2404,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                       flex: 3,
                                                       child: Container(
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, -1.0),
                                                           child: Text(
                                                             'Descrição',
@@ -2436,10 +2430,10 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                     Container(
                                                       width: 90.0,
                                                       decoration:
-                                                          BoxDecoration(),
+                                                          const BoxDecoration(),
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.0, -1.0),
                                                         child: Text(
                                                           'Status',
@@ -2506,7 +2500,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                               .length,
                                                       separatorBuilder: (_,
                                                               __) =>
-                                                          SizedBox(height: 8.0),
+                                                          const SizedBox(height: 8.0),
                                                       itemBuilder: (context,
                                                           listViewTarefasIndex) {
                                                         final listViewTarefasTarefaRow =
@@ -2604,7 +2598,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                           },
                                                           child: Container(
                                                             constraints:
-                                                                BoxConstraints(
+                                                                const BoxConstraints(
                                                               minHeight: 36.0,
                                                             ),
                                                             decoration:
@@ -2620,7 +2614,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                   : FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                              boxShadow: [
+                                                              boxShadow: const [
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       4.0,
@@ -2640,7 +2634,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(8.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -2655,7 +2649,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child:
                                                                           Text(
                                                                         listViewTarefasTarefaRow
@@ -2675,7 +2669,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child:
                                                                           Text(
                                                                         listViewTarefasTarefaRow
@@ -2693,7 +2687,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                   Container(
                                                                     width: 90.0,
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Text(
                                                                       listViewTarefasTarefaRow
                                                                           .status!,
@@ -2720,14 +2714,14 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                     );
                                                   },
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           child: Container(
                                             decoration: BoxDecoration(
                                               color:
@@ -2739,7 +2733,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Text(
                                                     _model.tarefa != null
@@ -2757,7 +2751,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 28.0, 0.0, 0.0),
                                                   child: Form(
@@ -2769,7 +2763,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       children: [
-                                                        Container(
+                                                        SizedBox(
                                                           width:
                                                               double.infinity,
                                                           child: TextFormField(
@@ -2823,7 +2817,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -2885,7 +2879,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                     context),
                                                           ),
                                                         ),
-                                                        Container(
+                                                        SizedBox(
                                                           width:
                                                               double.infinity,
                                                           child: TextFormField(
@@ -2939,7 +2933,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                               focusedBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
-                                                                    BorderSide(
+                                                                    const BorderSide(
                                                                   color: Color(
                                                                       0x00000000),
                                                                   width: 1.0,
@@ -3012,7 +3006,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                             _model.dropDownValue ??=
                                                                 'Não Iniciado',
                                                           ),
-                                                          options: [
+                                                          options: const [
                                                             'Não Iniciado',
                                                             'Em andamento',
                                                             'Finalizado'
@@ -3055,7 +3049,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                           borderWidth: 0.0,
                                                           borderRadius: 8.0,
                                                           margin:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -3066,7 +3060,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                           isSearchable: false,
                                                           isMultiSelect: false,
                                                         ),
-                                                      ].divide(SizedBox(
+                                                      ].divide(const SizedBox(
                                                           height: 12.0)),
                                                     ),
                                                   ),
@@ -3084,7 +3078,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -3119,17 +3113,17 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                             (alertDialogContext) {
                                                                           return AlertDialog(
                                                                             title:
-                                                                                Text('Deletar Atividade'),
+                                                                                const Text('Deletar Atividade'),
                                                                             content:
                                                                                 Text('Deseja realmente deletar a atividade ${_model.tarefa?.nome}?'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                child: Text('Cancelar'),
+                                                                                child: const Text('Cancelar'),
                                                                               ),
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                child: Text('Confirmar'),
+                                                                                child: const Text('Confirmar'),
                                                                               ),
                                                                             ],
                                                                           );
@@ -3180,7 +3174,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: Duration(
+                                                                    duration: const Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -3196,7 +3190,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                             null)
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -3247,7 +3241,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, 1.0),
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
@@ -3306,7 +3300,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: Duration(
+                                                                  duration: const Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -3344,7 +3338,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: Duration(
+                                                                  duration: const Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -3385,7 +3379,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                                         .primaryText,
                                                                   ),
                                                                 ),
-                                                                duration: Duration(
+                                                                duration: const Duration(
                                                                     milliseconds:
                                                                         4000),
                                                                 backgroundColor:
@@ -3406,14 +3400,14 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
                                                                       16.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -3444,7 +3438,7 @@ class _ProjetosWidgetState extends State<ProjetosWidget>
                                                     ),
                                                   ],
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),

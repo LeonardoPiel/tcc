@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -31,12 +30,12 @@ class SignupCall {
 
     final ffApiRequestBody = '''
 {
-  "email": "${email}",
-  "password": "${password}"
+  "email": "$email",
+  "password": "$password"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'signup',
-      apiUrl: '${baseUrl}/auth/v1/signup',
+      apiUrl: '$baseUrl/auth/v1/signup',
       callType: ApiCallType.POST,
       headers: {
         'apikey':
@@ -69,20 +68,20 @@ class UpdateUserCall {
   }) async {
     final baseUrl = SupabaseAuthGroup.getBaseUrl();
 
-    final ffApiRequestBody = '''
+    const ffApiRequestBody = '''
 {
   "email": "someone@email.com",
   "password": "new-password"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Update User',
-      apiUrl: '${baseUrl}/auth/v1/user',
+      apiUrl: '$baseUrl/auth/v1/user',
       callType: ApiCallType.PUT,
       headers: {
         'apikey':
             'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV6Z3V3aGJid2VhZWZwYmh6bmxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk2MTkzMzUsImV4cCI6MjA0NTE5NTMzNX0._owmv-Jbf5iEXgOmmI_u6_qstH73JNhi54escOjGeRo',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${jwt}',
+        'Authorization': 'Bearer $jwt',
       },
       params: {},
       body: ffApiRequestBody,

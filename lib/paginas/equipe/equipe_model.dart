@@ -1,17 +1,11 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/menu/side_menu/side_menu_widget.dart';
 import '/paginas/app_nav_bar/app_nav_bar_widget.dart';
 import 'dart:async';
 import 'equipe_widget.dart' show EquipeWidget;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class EquipeModel extends FlutterFlowModel<EquipeWidget> {
   ///  Local state fields for this page.
@@ -31,11 +25,32 @@ class EquipeModel extends FlutterFlowModel<EquipeWidget> {
   TextEditingController? colaboradorNomeTextController;
   String? Function(BuildContext, String?)?
       colaboradorNomeTextControllerValidator;
+  String? _colaboradorNomeTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Campo obrigatório';
+    }
+
+    return null;
+  }
+
   // State field(s) for colaborador_email widget.
   FocusNode? colaboradorEmailFocusNode;
   TextEditingController? colaboradorEmailTextController;
   String? Function(BuildContext, String?)?
       colaboradorEmailTextControllerValidator;
+  String? _colaboradorEmailTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Campo obrigatório';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'Email inválido';
+    }
+    return null;
+  }
+
   // State field(s) for colaborador_senha widget.
   FocusNode? colaboradorSenhaFocusNode;
   TextEditingController? colaboradorSenhaTextController;
@@ -53,6 +68,10 @@ class EquipeModel extends FlutterFlowModel<EquipeWidget> {
   void initState(BuildContext context) {
     appNavBarModel = createModel(context, () => AppNavBarModel());
     sideMenuModel = createModel(context, () => SideMenuModel());
+    colaboradorNomeTextControllerValidator =
+        _colaboradorNomeTextControllerValidator;
+    colaboradorEmailTextControllerValidator =
+        _colaboradorEmailTextControllerValidator;
   }
 
   @override
@@ -76,7 +95,7 @@ class EquipeModel extends FlutterFlowModel<EquipeWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
+      await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = requestCompleter1?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
@@ -91,7 +110,7 @@ class EquipeModel extends FlutterFlowModel<EquipeWidget> {
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
+      await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = requestCompleter2?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {

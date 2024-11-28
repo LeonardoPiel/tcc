@@ -9,7 +9,7 @@ class MovimentacaoTable extends SupabaseTable<MovimentacaoRow> {
 }
 
 class MovimentacaoRow extends SupabaseDataRow {
-  MovimentacaoRow(Map<String, dynamic> data) : super(data);
+  MovimentacaoRow(super.data);
 
   @override
   SupabaseTable get table => MovimentacaoTable();

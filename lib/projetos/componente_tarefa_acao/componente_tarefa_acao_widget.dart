@@ -6,8 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'componente_tarefa_acao_model.dart';
 export 'componente_tarefa_acao_model.dart';
 
@@ -63,7 +61,7 @@ class _ComponenteTarefaAcaoWidgetState
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -97,11 +95,11 @@ class _ComponenteTarefaAcaoWidgetState
                   controller: _model.dropDownStatusTarefaValueController ??=
                       FormFieldController<String>(
                     _model.dropDownStatusTarefaValue ??= valueOrDefault<String>(
-                      widget!.tarefa?.status,
+                      widget.tarefa?.status,
                       'Não iniciado',
                     ),
                   ),
-                  options: ['Não Iniciado', 'Em andamento', 'Finalizado'],
+                  options: const ['Não Iniciado', 'Em andamento', 'Finalizado'],
                   onChanged: (val) => safeSetState(
                       () => _model.dropDownStatusTarefaValue = val),
                   width: double.infinity,
@@ -121,7 +119,7 @@ class _ComponenteTarefaAcaoWidgetState
                   borderColor: FlutterFlowTheme.of(context).alternate,
                   borderWidth: 0.0,
                   borderRadius: 8.0,
-                  margin: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                  margin: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                   hidesUnderline: true,
                   isOverButton: false,
                   isSearchable: false,
@@ -138,10 +136,10 @@ class _ComponenteTarefaAcaoWidgetState
                       text: 'Cancelar',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -162,19 +160,19 @@ class _ComponenteTarefaAcaoWidgetState
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: Text('Alterar status de atividade'),
+                                  title: const Text('Alterar status de atividade'),
                                   content: Text(
-                                      'Deseja realmente alterar o status da tarefa ${widget!.tarefa?.nome}?'),
+                                      'Deseja realmente alterar o status da tarefa ${widget.tarefa?.nome}?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, false),
-                                      child: Text('Cancelar'),
+                                      child: const Text('Cancelar'),
                                     ),
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, true),
-                                      child: Text('Confirmar'),
+                                      child: const Text('Confirmar'),
                                     ),
                                   ],
                                 );
@@ -188,7 +186,7 @@ class _ComponenteTarefaAcaoWidgetState
                             },
                             matchingRows: (rows) => rows.eqOrNull(
                               'id',
-                              widget!.tarefa?.id,
+                              widget.tarefa?.id,
                             ),
                           );
                           ScaffoldMessenger.of(context).showSnackBar(
@@ -200,7 +198,7 @@ class _ComponenteTarefaAcaoWidgetState
                                       FlutterFlowTheme.of(context).primaryText,
                                 ),
                               ),
-                              duration: Duration(milliseconds: 4000),
+                              duration: const Duration(milliseconds: 4000),
                               backgroundColor:
                                   FlutterFlowTheme.of(context).secondary,
                             ),
@@ -211,10 +209,10 @@ class _ComponenteTarefaAcaoWidgetState
                       text: 'Alterar',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -228,7 +226,7 @@ class _ComponenteTarefaAcaoWidgetState
                     ),
                   ],
                 ),
-              ].divide(SizedBox(height: 16.0)),
+              ].divide(const SizedBox(height: 16.0)),
             ),
           ),
         ),

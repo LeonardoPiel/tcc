@@ -10,7 +10,7 @@ class StatusTarefaFaseTable extends SupabaseTable<StatusTarefaFaseRow> {
 }
 
 class StatusTarefaFaseRow extends SupabaseDataRow {
-  StatusTarefaFaseRow(Map<String, dynamic> data) : super(data);
+  StatusTarefaFaseRow(super.data);
 
   @override
   SupabaseTable get table => StatusTarefaFaseTable();

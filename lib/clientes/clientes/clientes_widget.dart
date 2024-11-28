@@ -8,9 +8,6 @@ import '/menu/side_menu/side_menu_widget.dart';
 import '/paginas/app_nav_bar/app_nav_bar_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:provider/provider.dart';
 import 'clientes_model.dart';
 export 'clientes_model.dart';
 
@@ -82,7 +79,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
             wrapWithModel(
               model: _model.appNavBarModel,
               updateCallback: () => safeSetState(() {}),
-              child: AppNavBarWidget(),
+              child: const AppNavBarWidget(),
             ),
             Flexible(
               child: Row(
@@ -92,13 +89,13 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                   wrapWithModel(
                     model: _model.sideMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: SideMenuWidget(
+                    child: const SideMenuWidget(
                       selectedNav: 'cliente',
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: FutureBuilder<List<UsuarioRow>>(
                         future: UsuarioTable().querySingleRow(
                           queryFn: (q) => q.eqOrNull(
@@ -141,7 +138,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsets.all(16.0),
+                                    padding: const EdgeInsets.all(16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -180,7 +177,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     16.0,
@@ -246,7 +243,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                     listViewClientesClienteRowList[
                                                                         listViewClientesIndex];
                                                                 return Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -460,7 +457,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             8.0,
@@ -481,7 +478,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                                 borderRadius: BorderRadius.circular(50.0),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsets.all(2.0),
+                                                                                padding: const EdgeInsets.all(2.0),
                                                                                 child: ClipRRect(
                                                                                   borderRadius: BorderRadius.circular(50.0),
                                                                                   child: Image.network(
@@ -495,7 +492,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                             ),
                                                                             Expanded(
                                                                               child: Container(
-                                                                                decoration: BoxDecoration(),
+                                                                                decoration: const BoxDecoration(),
                                                                                 child: Text(
                                                                                   listViewClientesClienteRow.nome!,
                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -508,7 +505,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                               ),
                                                                             ),
                                                                             Container(
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Text(
                                                                                 listViewClientesClienteRow.email!,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -519,7 +516,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                               ),
                                                                             ),
                                                                             Container(
-                                                                              decoration: BoxDecoration(),
+                                                                              decoration: const BoxDecoration(),
                                                                               child: Text(
                                                                                 listViewClientesClienteRow.telefone!,
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -529,7 +526,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                                     ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(SizedBox(width: 8.0)),
+                                                                          ].divide(const SizedBox(width: 8.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -548,7 +545,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                 Expanded(
                                                   child: Container(
                                                     height: 200.0,
-                                                    decoration: BoxDecoration(),
+                                                    decoration: const BoxDecoration(),
                                                     child: Column(
                                                       mainAxisSize:
                                                           MainAxisSize.max,
@@ -634,7 +631,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                     listViewCredenciaisCredencialClienteRowList[
                                                                         listViewCredenciaisIndex];
                                                                 return Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -779,7 +776,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                       ),
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             8.0,
                                                                             0.0,
                                                                             8.0,
@@ -794,7 +791,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                               [
                                                                             Expanded(
                                                                               child: Container(
-                                                                                decoration: BoxDecoration(),
+                                                                                decoration: const BoxDecoration(),
                                                                                 child: Text(
                                                                                   listViewCredenciaisCredencialClienteRow.url!,
                                                                                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -806,7 +803,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ].divide(SizedBox(width: 8.0)),
+                                                                          ].divide(const SizedBox(width: 8.0)),
                                                                         ),
                                                                       ),
                                                                     ),
@@ -820,7 +817,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                            ].divide(SizedBox(height: 24.0)),
+                                            ].divide(const SizedBox(height: 24.0)),
                                           ),
                                         ),
                                         Column(
@@ -862,7 +859,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
-                                                          Container(
+                                                          SizedBox(
                                                             width:
                                                                 double.infinity,
                                                             child:
@@ -916,7 +913,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -983,7 +980,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              Container(
+                                                              SizedBox(
                                                                 width: 200.0,
                                                                 child:
                                                                     TextFormField(
@@ -1037,7 +1034,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                     focusedBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
-                                                                          BorderSide(
+                                                                          const BorderSide(
                                                                         color: Color(
                                                                             0x00000000),
                                                                         width:
@@ -1103,7 +1100,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                               ),
                                                               Expanded(
                                                                 child:
-                                                                    Container(
+                                                                    SizedBox(
                                                                   width: 200.0,
                                                                   child:
                                                                       TextFormField(
@@ -1158,7 +1155,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                       focusedBorder:
                                                                           OutlineInputBorder(
                                                                         borderSide:
-                                                                            BorderSide(
+                                                                            const BorderSide(
                                                                           color:
                                                                               Color(0x00000000),
                                                                           width:
@@ -1223,10 +1220,10 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ].divide(SizedBox(
+                                                            ].divide(const SizedBox(
                                                                 width: 8.0)),
                                                           ),
-                                                          Container(
+                                                          SizedBox(
                                                             width:
                                                                 double.infinity,
                                                             child:
@@ -1280,7 +1277,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1342,7 +1339,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                       context),
                                                             ),
                                                           ),
-                                                          Container(
+                                                          SizedBox(
                                                             width:
                                                                 double.infinity,
                                                             child:
@@ -1396,7 +1393,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1460,7 +1457,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                       context),
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 12.0)),
                                                       ),
                                                     ),
@@ -1473,7 +1470,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1508,17 +1505,17 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                             (alertDialogContext) {
                                                                           return AlertDialog(
                                                                             title:
-                                                                                Text('Deletar Fase'),
+                                                                                const Text('Deletar Fase'),
                                                                             content:
                                                                                 Text('Deseja realmente deletar o cliente ${_model.cliente?.nome}?'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                child: Text('Cancelar'),
+                                                                                child: const Text('Cancelar'),
                                                                               ),
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                child: Text('Confirmar'),
+                                                                                child: const Text('Confirmar'),
                                                                               ),
                                                                             ],
                                                                           );
@@ -1577,7 +1574,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: Duration(
+                                                                    duration: const Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -1640,7 +1637,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: Duration(
+                                                                    duration: const Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -1684,7 +1681,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: Duration(
+                                                                    duration: const Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -1741,14 +1738,14 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1825,14 +1822,14 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1863,7 +1860,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                       ],
                                                     ),
                                                   ].divide(
-                                                      SizedBox(height: 16.0)),
+                                                      const SizedBox(height: 16.0)),
                                                 ),
                                               ),
                                             ),
@@ -1896,7 +1893,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                       .w600,
                                                             ),
                                                       ),
-                                                      Container(
+                                                      SizedBox(
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
@@ -1947,7 +1944,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 1.0,
@@ -2014,7 +2011,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                             MainAxisSize.max,
                                                         children: [
                                                           Expanded(
-                                                            child: Container(
+                                                            child: SizedBox(
                                                               width: double
                                                                   .infinity,
                                                               child:
@@ -2069,7 +2066,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -2133,7 +2130,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                             ),
                                                           ),
                                                           Expanded(
-                                                            child: Container(
+                                                            child: SizedBox(
                                                               width: double
                                                                   .infinity,
                                                               child:
@@ -2188,7 +2185,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                   focusedBorder:
                                                                       OutlineInputBorder(
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Color(
                                                                           0x00000000),
                                                                       width:
@@ -2251,10 +2248,10 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                               ),
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             width: 8.0)),
                                                       ),
-                                                      Container(
+                                                      SizedBox(
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
@@ -2307,7 +2304,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 1.0,
@@ -2417,7 +2414,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: Duration(
+                                                                  duration: const Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -2459,7 +2456,7 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: Duration(
+                                                                  duration: const Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -2501,14 +2498,14 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2537,11 +2534,11 @@ class _ClientesWidgetState extends State<ClientesWidget> {
                                                           ),
                                                         ),
                                                     ].divide(
-                                                        SizedBox(height: 12.0)),
+                                                        const SizedBox(height: 12.0)),
                                                   ),
                                                 ),
                                               ),
-                                          ].divide(SizedBox(height: 12.0)),
+                                          ].divide(const SizedBox(height: 12.0)),
                                         ),
                                       ],
                                     ),

@@ -11,7 +11,7 @@ class MovimentacaoLancamentoViewTable
 }
 
 class MovimentacaoLancamentoViewRow extends SupabaseDataRow {
-  MovimentacaoLancamentoViewRow(Map<String, dynamic> data) : super(data);
+  MovimentacaoLancamentoViewRow(super.data);
 
   @override
   SupabaseTable get table => MovimentacaoLancamentoViewTable();

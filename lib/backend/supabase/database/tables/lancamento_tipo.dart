@@ -10,7 +10,7 @@ class LancamentoTipoTable extends SupabaseTable<LancamentoTipoRow> {
 }
 
 class LancamentoTipoRow extends SupabaseDataRow {
-  LancamentoTipoRow(Map<String, dynamic> data) : super(data);
+  LancamentoTipoRow(super.data);
 
   @override
   SupabaseTable get table => LancamentoTipoTable();

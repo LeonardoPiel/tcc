@@ -4,8 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'componente_projeto_model.dart';
 export 'componente_projeto_model.dart';
 
@@ -38,20 +36,20 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.cliente = widget!.projeto?.clienteId;
+      _model.cliente = widget.projeto?.clienteId;
       safeSetState(() {});
     });
 
     _model.textFieldNomeTextController ??=
-        TextEditingController(text: widget!.projeto?.nome);
+        TextEditingController(text: widget.projeto?.nome);
     _model.textFieldNomeFocusNode ??= FocusNode();
 
     _model.textFieldDescricaoTextController ??=
-        TextEditingController(text: widget!.projeto?.descricao);
+        TextEditingController(text: widget.projeto?.descricao);
     _model.textFieldDescricaoFocusNode ??= FocusNode();
 
     _model.switchValue =
-        widget!.projeto != null ? widget!.projeto!.ativo : true;
+        widget.projeto != null ? widget.projeto!.ativo : true;
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -65,20 +63,20 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             height: MediaQuery.sizeOf(context).height * 0.8,
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxWidth: 500.0,
             ),
-            decoration: BoxDecoration(),
-            alignment: AlignmentDirectional(0.0, 0.0),
+            decoration: const BoxDecoration(),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               child: Card(
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -87,13 +85,13 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(1.0, -1.0),
+                        alignment: const AlignmentDirectional(1.0, -1.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -110,10 +108,10 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, -1.0),
+                        alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Text(
-                          widget!.projeto?.id != null
-                              ? 'Editar projeto ${widget!.projeto?.nome}'
+                          widget.projeto?.id != null
+                              ? 'Editar projeto ${widget.projeto?.nome}'
                               : 'Criar novo projeto',
                           style:
                               FlutterFlowTheme.of(context).labelLarge.override(
@@ -122,7 +120,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                                   ),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.textFieldNomeTextController,
@@ -153,7 +151,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
@@ -187,7 +185,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                               .asValidator(context),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.textFieldDescricaoTextController,
@@ -218,7 +216,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
@@ -257,7 +255,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 8.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 8.0),
                         child: Text(
                           'Cliente',
                           style:
@@ -295,7 +293,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                               scrollDirection: Axis.vertical,
                               itemCount: listViewClientesClienteRowList.length,
                               separatorBuilder: (_, __) =>
-                                  SizedBox(height: 8.0),
+                                  const SizedBox(height: 8.0),
                               itemBuilder: (context, listViewClientesIndex) {
                                 final listViewClientesClienteRow =
                                     listViewClientesClienteRowList[
@@ -322,7 +320,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                                         FlutterFlowTheme.of(context)
                                             .secondaryBackground,
                                       ),
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4.0,
                                           color: Color(0x33000000),
@@ -335,7 +333,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 6.0, 12.0, 6.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -370,7 +368,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.all(24.0),
+                        padding: const EdgeInsets.all(24.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -390,7 +388,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                               value: _model.switchValue!,
                               onChanged: (newValue) async {
                                 safeSetState(
-                                    () => _model.switchValue = newValue!);
+                                    () => _model.switchValue = newValue);
                               },
                               activeColor: FlutterFlowTheme.of(context).primary,
                               activeTrackColor:
@@ -400,12 +398,12 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                               inactiveThumbColor: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
                             ),
-                          ].divide(SizedBox(width: 12.0)),
+                          ].divide(const SizedBox(width: 12.0)),
                         ),
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -417,20 +415,20 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                                       context: context,
                                       builder: (alertDialogContext) {
                                         return AlertDialog(
-                                          title: Text('Deletar Projeto'),
-                                          content: Text(
+                                          title: const Text('Deletar Projeto'),
+                                          content: const Text(
                                               'Deseja realmente deletar o projeto? Esta ação não poderá ser desfeita.'),
                                           actions: [
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext, false),
-                                              child: Text('Cancelar'),
+                                              child: const Text('Cancelar'),
                                             ),
                                             TextButton(
                                               onPressed: () => Navigator.pop(
                                                   alertDialogContext, true),
                                               child:
-                                                  Text('Sim, desejo deletar!'),
+                                                  const Text('Sim, desejo deletar!'),
                                             ),
                                           ],
                                         );
@@ -441,13 +439,13 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                                   await FaseProjetoTable().delete(
                                     matchingRows: (rows) => rows.eqOrNull(
                                       'projeto_id',
-                                      widget!.projeto?.id,
+                                      widget.projeto?.id,
                                     ),
                                   );
                                   await ProjetoTable().delete(
                                     matchingRows: (rows) => rows.eqOrNull(
                                       'id',
-                                      widget!.projeto?.id,
+                                      widget.projeto?.id,
                                     ),
                                   );
                                   ScaffoldMessenger.of(context).showSnackBar(
@@ -459,7 +457,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                                               .primaryText,
                                         ),
                                       ),
-                                      duration: Duration(milliseconds: 4000),
+                                      duration: const Duration(milliseconds: 4000),
                                       backgroundColor:
                                           FlutterFlowTheme.of(context).error,
                                     ),
@@ -469,9 +467,9 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                               text: 'Deletar ',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).error,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -486,10 +484,10 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(1.0, 1.0),
+                              alignment: const AlignmentDirectional(1.0, 1.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  if (widget!.projeto != null) {
+                                  if (widget.projeto != null) {
                                     await ProjetoTable().update(
                                       data: {
                                         'nome': _model
@@ -502,7 +500,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                                       },
                                       matchingRows: (rows) => rows.eqOrNull(
                                         'id',
-                                        widget!.projeto?.id,
+                                        widget.projeto?.id,
                                       ),
                                     );
                                   } else {
@@ -521,14 +519,14 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
 
                                   Navigator.pop(context);
                                 },
-                                text: widget!.projeto != null
+                                text: widget.projeto != null
                                     ? 'Editar projeto'
                                     : 'Criar projeto',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -546,7 +544,7 @@ class _ComponenteProjetoWidgetState extends State<ComponenteProjetoWidget> {
                           ],
                         ),
                       ),
-                    ].divide(SizedBox(height: 12.0)),
+                    ].divide(const SizedBox(height: 12.0)),
                   ),
                 ),
               ),

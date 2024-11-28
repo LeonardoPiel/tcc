@@ -9,8 +9,6 @@ import '/menu/side_menu/side_menu_widget.dart';
 import '/paginas/app_nav_bar/app_nav_bar_widget.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'equipe_model.dart';
 export 'equipe_model.dart';
 
@@ -67,7 +65,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
             wrapWithModel(
               model: _model.appNavBarModel,
               updateCallback: () => safeSetState(() {}),
-              child: AppNavBarWidget(),
+              child: const AppNavBarWidget(),
             ),
             Flexible(
               child: Row(
@@ -77,13 +75,13 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                   wrapWithModel(
                     model: _model.sideMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: SideMenuWidget(
+                    child: const SideMenuWidget(
                       selectedNav: 'equipe',
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Container(
                         decoration: BoxDecoration(
                           color:
@@ -97,7 +95,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                             Flexible(
                               flex: 3,
                               child: Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,8 +123,9 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                       0.0, 16.0, 0.0, 0.0),
                                               child: FutureBuilder<
                                                   List<UsuarioRow>>(
@@ -186,12 +185,9 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                               listViewColaboradoresIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    16.0,
-                                                                    8.0),
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(16.0,
+                                                                0.0, 16.0, 8.0),
                                                         child: InkWell(
                                                           splashColor: Colors
                                                               .transparent,
@@ -310,12 +306,12 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          8.0,
-                                                                          0.0,
-                                                                          8.0,
-                                                                          0.0),
+                                                                      8.0,
+                                                                      0.0,
+                                                                      8.0,
+                                                                      0.0),
                                                               child: Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -340,9 +336,9 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                     ),
                                                                     child:
                                                                         Padding(
-                                                                      padding:
-                                                                          EdgeInsets.all(
-                                                                              2.0),
+                                                                      padding: const EdgeInsets
+                                                                          .all(
+                                                                          2.0),
                                                                       child:
                                                                           ClipRRect(
                                                                         borderRadius:
@@ -364,7 +360,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                     child:
                                                                         Container(
                                                                       decoration:
-                                                                          BoxDecoration(),
+                                                                          const BoxDecoration(),
                                                                       child:
                                                                           Text(
                                                                         listViewColaboradoresUsuarioRow
@@ -382,7 +378,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Text(
                                                                       listViewColaboradoresUsuarioRow
                                                                               .ativo
@@ -404,7 +400,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: Text(
                                                                       listViewColaboradoresUsuarioRow
                                                                           .email!,
@@ -424,7 +420,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                   ),
                                                                   Container(
                                                                     decoration:
-                                                                        BoxDecoration(),
+                                                                        const BoxDecoration(),
                                                                     child: FutureBuilder<
                                                                         List<
                                                                             NivelUsuarioRow>>(
@@ -479,9 +475,10 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                       },
                                                                     ),
                                                                   ),
-                                                                ].divide(SizedBox(
-                                                                    width:
-                                                                        8.0)),
+                                                                ].divide(
+                                                                    const SizedBox(
+                                                                        width:
+                                                                            8.0)),
                                                               ),
                                                             ),
                                                           ),
@@ -521,11 +518,11 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                           Form(
                                             key: _model.formKey,
                                             autovalidateMode:
-                                                AutovalidateMode.disabled,
+                                                AutovalidateMode.always,
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Container(
+                                                SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -574,7 +571,8 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide:
+                                                            const BorderSide(
                                                           color:
                                                               Color(0x00000000),
                                                           width: 1.0,
@@ -628,7 +626,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                         .asValidator(context),
                                                   ),
                                                 ),
-                                                Container(
+                                                SizedBox(
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
@@ -677,7 +675,8 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide:
+                                                            const BorderSide(
                                                           color:
                                                               Color(0x00000000),
                                                           width: 1.0,
@@ -734,7 +733,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                   ),
                                                 ),
                                                 if (_model.usuario == null)
-                                                  Container(
+                                                  SizedBox(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -742,7 +741,6 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                       focusNode: _model
                                                           .colaboradorSenhaFocusNode,
                                                       autofocus: false,
-                                                      readOnly: true,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -788,7 +786,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                         focusedBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0x00000000),
                                                             width: 1.0,
@@ -854,17 +852,25 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(
-                                                      'Colaborador em atividade',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .labelLarge
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
+                                                    Expanded(
+                                                      child: Text(
+                                                        'Colaborador em atividade',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                        overflow: TextOverflow
+                                                            .ellipsis, // Handle long text
+                                                      ),
                                                     ),
                                                     Switch.adaptive(
                                                       value:
@@ -873,7 +879,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                           (newValue) async {
                                                         safeSetState(() =>
                                                             _model.switchValue =
-                                                                newValue!);
+                                                                newValue);
                                                       },
                                                       activeColor:
                                                           FlutterFlowTheme.of(
@@ -894,279 +900,337 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(
+                                                  const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 36.0, 0.0),
-                                                child: FlutterFlowIconButton(
-                                                  borderColor:
-                                                      Colors.transparent,
-                                                  borderRadius: 8.0,
-                                                  buttonSize: 40.0,
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .error,
-                                                  icon: Icon(
-                                                    Icons.delete_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .info,
-                                                    size: 24.0,
+                                              Expanded(
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          0.0, 0.0, 36.0, 0.0),
+                                                  child: FlutterFlowIconButton(
+                                                    borderColor:
+                                                        Colors.transparent,
+                                                    borderRadius: 8.0,
+                                                    buttonSize: 40.0,
+                                                    fillColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .error,
+                                                    icon: Icon(
+                                                      Icons.delete_rounded,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .info,
+                                                      size: 24.0,
+                                                    ),
+                                                    onPressed: () async {
+                                                      var confirmDialogResponse =
+                                                          await showDialog<
+                                                                  bool>(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (alertDialogContext) {
+                                                                  return AlertDialog(
+                                                                    title: const Text(
+                                                                        'Deletar'),
+                                                                    content: Text(
+                                                                        'Deseja realmente deletar o colaborador:  ${_model.usuario?.nome}?'),
+                                                                    actions: [
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                        child: const Text(
+                                                                            'Cancelar'),
+                                                                      ),
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                        child: const Text(
+                                                                            'Confirmar'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                },
+                                                              ) ??
+                                                              false;
+                                                      if (confirmDialogResponse) {
+                                                        if (currentUserUid !=
+                                                            _model.usuario
+                                                                ?.user) {
+                                                          await ProjetoColaboradorTable()
+                                                              .delete(
+                                                            matchingRows: (rows) =>
+                                                                rows.eqOrNull(
+                                                                    'id',
+                                                                    _model
+                                                                        .usuario
+                                                                        ?.id),
+                                                          );
+                                                          await UsuarioTable()
+                                                              .delete(
+                                                            matchingRows: (rows) =>
+                                                                rows.eqOrNull(
+                                                                    'id',
+                                                                    _model
+                                                                        .usuario
+                                                                        ?.id),
+                                                          );
+                                                          _model.usuario = null;
+                                                          safeSetState(() {});
+                                                          safeSetState(() {
+                                                            _model
+                                                                .colaboradorNomeTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .colaboradorEmailTextController
+                                                                ?.clear();
+                                                            _model
+                                                                .colaboradorSenhaTextController
+                                                                ?.clear();
+                                                          });
+                                                          ScaffoldMessenger.of(
+                                                                  context)
+                                                              .showSnackBar(
+                                                            SnackBar(
+                                                              content: Text(
+                                                                'Colaborador excluído com sucesso.',
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                ),
+                                                              ),
+                                                              duration:
+                                                                  const Duration(
+                                                                      milliseconds:
+                                                                          4000),
+                                                              backgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .error,
+                                                            ),
+                                                          );
+                                                        }
+                                                      }
+                                                      safeSetState(() => _model
+                                                              .requestCompleter2 =
+                                                          null);
+                                                      await _model
+                                                          .waitForRequestCompleted2();
+                                                    },
                                                   ),
+                                                ),
+                                              ),
+                                              Expanded(
+                                                child: FFButtonWidget(
                                                   onPressed: () async {
-                                                    var confirmDialogResponse =
-                                                        await showDialog<bool>(
-                                                              context: context,
-                                                              builder:
-                                                                  (alertDialogContext) {
-                                                                return AlertDialog(
-                                                                  title: Text(
-                                                                      'Deletar'),
-                                                                  content: Text(
-                                                                      'Deseja realmente deletar o colaborador:  ${_model.usuario?.nome}?'),
-                                                                  actions: [
-                                                                    TextButton(
-                                                                      onPressed: () => Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                      child: Text(
-                                                                          'Cancelar'),
-                                                                    ),
-                                                                    TextButton(
-                                                                      onPressed: () => Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                      child: Text(
-                                                                          'Confirmar'),
-                                                                    ),
-                                                                  ],
-                                                                );
-                                                              },
-                                                            ) ??
-                                                            false;
-                                                    if (confirmDialogResponse) {
-                                                      if (currentUserUid !=
-                                                          _model
-                                                              .usuario?.user) {
-                                                        await ProjetoColaboradorTable()
-                                                            .delete(
-                                                          matchingRows:
-                                                              (rows) =>
-                                                                  rows.eqOrNull(
-                                                            'id',
-                                                            _model.usuario?.id,
-                                                          ),
-                                                        );
-                                                        await UsuarioTable()
-                                                            .delete(
-                                                          matchingRows:
-                                                              (rows) =>
-                                                                  rows.eqOrNull(
-                                                            'id',
-                                                            _model.usuario?.id,
-                                                          ),
-                                                        );
-                                                        _model.usuario = null;
-                                                        safeSetState(() {});
-                                                        safeSetState(() {
-                                                          _model
+                                                    var shouldSetState = false;
+                                                    if (_model.usuario !=
+                                                        null) {
+                                                      await UsuarioTable()
+                                                          .update(
+                                                        data: {
+                                                          'nome': _model
                                                               .colaboradorNomeTextController
-                                                              ?.clear();
-                                                          _model
+                                                              .text,
+                                                          'email': _model
                                                               .colaboradorEmailTextController
-                                                              ?.clear();
-                                                          _model
-                                                              .colaboradorSenhaTextController
-                                                              ?.clear();
-                                                        });
+                                                              .text,
+                                                          'ativo': _model
+                                                              .switchValue,
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                                'id',
+                                                                _model.usuario
+                                                                    ?.id),
+                                                      );
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'Colaborador editado com sucesso',
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                            ),
+                                                          ),
+                                                          duration:
+                                                              const Duration(
+                                                                  milliseconds:
+                                                                      4000),
+                                                          backgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondary,
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      if (!((_model
+                                                                  .colaboradorNomeTextController
+                                                                  .text !=
+                                                              '') &&
+                                                          (_model.colaboradorEmailTextController
+                                                                  .text !=
+                                                              '') &&
+                                                          (_model.colaboradorSenhaTextController
+                                                                  .text !=
+                                                              ''))) {
                                                         ScaffoldMessenger.of(
                                                                 context)
                                                             .showSnackBar(
                                                           SnackBar(
                                                             content: Text(
-                                                              'Colaborador excluído com sucesso.',
+                                                              'Verifique os campos obrigatórios.',
                                                               style: TextStyle(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
                                                               ),
                                                             ),
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    4000),
+                                                            duration:
+                                                                const Duration(
+                                                                    milliseconds:
+                                                                        4000),
                                                             backgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .error,
                                                           ),
                                                         );
+                                                        if (shouldSetState) {
+                                                          safeSetState(() {});
+                                                        }
+                                                        return;
                                                       }
-                                                    }
-                                                    safeSetState(() => _model
-                                                            .requestCompleter2 =
-                                                        null);
-                                                    await _model
-                                                        .waitForRequestCompleted2();
-                                                  },
-                                                ),
-                                              ),
-                                              FFButtonWidget(
-                                                onPressed: () async {
-                                                  if (_model.usuario != null) {
-                                                    await UsuarioTable().update(
-                                                      data: {
+                                                      _model.signup =
+                                                          await SupabaseAuthGroup
+                                                              .signupCall
+                                                              .call(
+                                                        password: _model
+                                                            .colaboradorSenhaTextController
+                                                            .text,
+                                                        email: _model
+                                                            .colaboradorEmailTextController
+                                                            .text,
+                                                      );
+
+                                                      shouldSetState = true;
+                                                      await UsuarioTable()
+                                                          .insert({
                                                         'nome': _model
                                                             .colaboradorNomeTextController
                                                             .text,
                                                         'email': _model
                                                             .colaboradorEmailTextController
                                                             .text,
+                                                        'data_cadastro':
+                                                            supaSerialize<
+                                                                    DateTime>(
+                                                                getCurrentTimestamp),
+                                                        'nivel_id': 3,
+                                                        'user':
+                                                            SupabaseAuthGroup
+                                                                .signupCall
+                                                                .id(
+                                                          (_model.signup
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        ),
                                                         'ativo':
                                                             _model.switchValue,
-                                                      },
-                                                      matchingRows: (rows) =>
-                                                          rows.eqOrNull(
-                                                        'id',
-                                                        _model.usuario?.id,
-                                                      ),
-                                                    );
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(
-                                                      SnackBar(
-                                                        content: Text(
-                                                          'Colaborador editado com sucesso',
-                                                          style: TextStyle(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                          ),
-                                                        ),
-                                                        duration: Duration(
-                                                            milliseconds: 4000),
-                                                        backgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                      ),
-                                                    );
-                                                  } else {
-                                                    _model.signup =
-                                                        await SupabaseAuthGroup
-                                                            .signupCall
-                                                            .call(
-                                                      password: _model
-                                                          .colaboradorSenhaTextController
-                                                          .text,
-                                                      email: _model
-                                                          .colaboradorEmailTextController
-                                                          .text,
-                                                    );
-
-                                                    await UsuarioTable()
-                                                        .insert({
-                                                      'nome': _model
-                                                          .colaboradorNomeTextController
-                                                          .text,
-                                                      'email': _model
-                                                          .colaboradorEmailTextController
-                                                          .text,
-                                                      'data_cadastro':
-                                                          supaSerialize<
-                                                                  DateTime>(
-                                                              getCurrentTimestamp),
-                                                      'nivel_id': 3,
-                                                      'user': SupabaseAuthGroup
-                                                          .signupCall
-                                                          .id(
-                                                        (_model.signup
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                      ),
-                                                      'ativo':
-                                                          _model.switchValue,
-                                                    });
-                                                    ScaffoldMessenger.of(
-                                                            context)
-                                                        .showSnackBar(
-                                                      SnackBar(
-                                                        content: Text(
-                                                          'Colaborador adicionado com sucesso',
-                                                          style: TextStyle(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                          ),
-                                                        ),
-                                                        duration: Duration(
-                                                            milliseconds: 4000),
-                                                        backgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondary,
-                                                      ),
-                                                    );
-                                                  }
-
-                                                  safeSetState(() =>
-                                                      _model.requestCompleter2 =
-                                                          null);
-                                                  await _model
-                                                      .waitForRequestCompleted2();
-                                                  _model.usuario = null;
-                                                  safeSetState(() {});
-                                                  safeSetState(() {
-                                                    _model
-                                                        .colaboradorNomeTextController
-                                                        ?.clear();
-                                                    _model
-                                                        .colaboradorEmailTextController
-                                                        ?.clear();
-                                                  });
-
-                                                  safeSetState(() {});
-                                                },
-                                                text: _model.usuario != null
-                                                    ? 'Editar colaborador'
-                                                    : 'Adicionar colaborador',
-                                                options: FFButtonOptions(
-                                                  height: 40.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
+                                                      });
+                                                      ScaffoldMessenger.of(
                                                               context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Inter Tight',
-                                                            color: Colors.white,
-                                                            letterSpacing: 0.0,
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'Colaborador adicionado com sucesso',
+                                                            style: TextStyle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                            ),
                                                           ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
+                                                          duration:
+                                                              const Duration(
+                                                                  milliseconds:
+                                                                      4000),
+                                                          backgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .secondary,
+                                                        ),
+                                                      );
+                                                    }
+
+                                                    safeSetState(() => _model
+                                                            .requestCompleter2 =
+                                                        null);
+                                                    await _model
+                                                        .waitForRequestCompleted2();
+                                                    _model.usuario = null;
+                                                    safeSetState(() {});
+                                                    safeSetState(() {
+                                                      _model
+                                                          .colaboradorNomeTextController
+                                                          ?.clear();
+                                                      _model
+                                                          .colaboradorEmailTextController
+                                                          ?.clear();
+                                                    });
+                                                    if (shouldSetState) {
+                                                      safeSetState(() {});
+                                                    }
+                                                  },
+                                                  text: _model.usuario != null
+                                                      ? 'Editar colaborador'
+                                                      : 'Adicionar colaborador',
+                                                  options: FFButtonOptions(
+                                                    height: 40.0,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                            16.0, 0.0),
+                                                    iconPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Inter Tight',
+                                                          color: Colors.white,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
                                                 ),
-                                              ),
+                                              )
                                             ],
                                           ),
-                                        ].divide(SizedBox(height: 16.0)),
+                                        ].divide(const SizedBox(height: 16.0)),
                                       ),
                                     ),
                                   ],
@@ -1228,26 +1292,26 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                   snapshot.data!;
 
                                               return Container(
-                                                decoration: BoxDecoration(),
+                                                decoration:
+                                                    const BoxDecoration(),
                                                 child: Builder(
                                                   builder: (context) {
                                                     if ((containerProjetoColaboradorProjetoColaboradorRowList
                                                             .isNotEmpty) &&
                                                         (containerProjetoColaboradorProjetoColaboradorRowList
-                                                                .length >
-                                                            0)) {
+                                                            .isNotEmpty)) {
                                                       return Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        12.0),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    12.0),
                                                             child: Text(
                                                               'Projetos atribuídos ao colaborador',
                                                               style: FlutterFlowTheme
@@ -1348,16 +1412,16 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
                                                                                     return AlertDialog(
-                                                                                      title: Text('Remover colaborador do projeto'),
-                                                                                      content: Text('Deseja remover o colaborador do projeto?'),
+                                                                                      title: const Text('Remover colaborador do projeto'),
+                                                                                      content: const Text('Deseja remover o colaborador do projeto?'),
                                                                                       actions: [
                                                                                         TextButton(
                                                                                           onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: Text('Cancelar'),
+                                                                                          child: const Text('Cancelar'),
                                                                                         ),
                                                                                         TextButton(
                                                                                           onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: Text('Confirmar'),
+                                                                                          child: const Text('Confirmar'),
                                                                                         ),
                                                                                       ],
                                                                                     );
@@ -1379,7 +1443,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                                       color: FlutterFlowTheme.of(context).primaryText,
                                                                                     ),
                                                                                   ),
-                                                                                  duration: Duration(milliseconds: 4000),
+                                                                                  duration: const Duration(milliseconds: 4000),
                                                                                   backgroundColor: FlutterFlowTheme.of(context).error,
                                                                                 ),
                                                                               );
@@ -1394,12 +1458,12 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                               FFButtonOptions(
                                                                             height:
                                                                                 40.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
                                                                                 0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1461,8 +1525,9 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(
                                                           0.0, 0.0, 0.0, 12.0),
                                                   child: Text(
                                                     'Clique para atribuir projeto ao colaborador selecionado',
@@ -1551,17 +1616,17 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                             (alertDialogContext) {
                                                                           return AlertDialog(
                                                                             title:
-                                                                                Text('Atribuir colaborador ao projeto'),
+                                                                                const Text('Atribuir colaborador ao projeto'),
                                                                             content:
-                                                                                Text('Deseja atribuir o colaborador ao projeto?'),
+                                                                                const Text('Deseja atribuir o colaborador ao projeto?'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                child: Text('Cancelar'),
+                                                                                child: const Text('Cancelar'),
                                                                               ),
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                child: Text('Confirmar'),
+                                                                                child: const Text('Confirmar'),
                                                                               ),
                                                                             ],
                                                                           );
@@ -1612,7 +1677,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                         ),
                                                                       ),
-                                                                      duration: Duration(
+                                                                      duration: const Duration(
                                                                           milliseconds:
                                                                               4000),
                                                                       backgroundColor:
@@ -1634,7 +1699,7 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                         ),
                                                                       ),
-                                                                      duration: Duration(
+                                                                      duration: const Duration(
                                                                           milliseconds:
                                                                               4000),
                                                                       backgroundColor:
@@ -1661,19 +1726,19 @@ class _EquipeWidgetState extends State<EquipeWidget> {
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
+                                                                      16.0,
+                                                                      0.0,
+                                                                      16.0,
+                                                                      0.0),
                                                               iconPadding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,

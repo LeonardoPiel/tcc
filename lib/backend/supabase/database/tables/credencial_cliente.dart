@@ -10,7 +10,7 @@ class CredencialClienteTable extends SupabaseTable<CredencialClienteRow> {
 }
 
 class CredencialClienteRow extends SupabaseDataRow {
-  CredencialClienteRow(Map<String, dynamic> data) : super(data);
+  CredencialClienteRow(super.data);
 
   @override
   SupabaseTable get table => CredencialClienteTable();

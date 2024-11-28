@@ -9,7 +9,7 @@ class TarefaTable extends SupabaseTable<TarefaRow> {
 }
 
 class TarefaRow extends SupabaseDataRow {
-  TarefaRow(Map<String, dynamic> data) : super(data);
+  TarefaRow(super.data);
 
   @override
   SupabaseTable get table => TarefaTable();

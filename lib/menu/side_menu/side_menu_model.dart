@@ -1,13 +1,7 @@
-import '/auth/supabase_auth/auth_util.dart';
-import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/menu/menu_item/menu_item_widget.dart';
 import 'side_menu_widget.dart' show SideMenuWidget;
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class SideMenuModel extends FlutterFlowModel<SideMenuWidget> {
   ///  Local state fields for this component.
@@ -22,7 +16,7 @@ class SideMenuModel extends FlutterFlowModel<SideMenuWidget> {
 
   double logoSize = 32.0;
 
-  Color primaryColor = Color(4283120111);
+  Color primaryColor = const Color(0xff4b39ef);
 
   double? hoveredMenuSize = 250.0;
 

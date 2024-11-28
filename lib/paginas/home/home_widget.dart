@@ -4,16 +4,11 @@ import '/clientes/componente_credenciais/componente_credenciais_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/menu/side_menu/side_menu_widget.dart';
 import '/paginas/app_nav_bar/app_nav_bar_widget.dart';
 import '/projetos/componente_tarefa_acao/componente_tarefa_acao_widget.dart';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_model.dart';
 export 'home_model.dart';
 
@@ -56,8 +51,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(30.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(30.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -75,8 +70,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -94,8 +89,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -113,8 +108,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 30.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -150,7 +145,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             wrapWithModel(
               model: _model.appNavBarModel,
               updateCallback: () => safeSetState(() {}),
-              child: AppNavBarWidget(),
+              child: const AppNavBarWidget(),
             ),
             Expanded(
               child: Row(
@@ -160,13 +155,13 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   wrapWithModel(
                     model: _model.sideMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: SideMenuWidget(
+                    child: const SideMenuWidget(
                       selectedNav: 'home',
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: FutureBuilder<List<UsuarioRow>>(
                         future: UsuarioTable().querySingleRow(
                           queryFn: (q) => q.eqOrNull(
@@ -208,7 +203,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 0.0, 12.0),
                                   child: Text(
                                     'Projetos',
@@ -223,7 +218,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 0.0),
                                   child: FutureBuilder<
                                       List<ProjetoColaboradorRow>>(
@@ -308,7 +303,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                     listViewProjetoRowList[
                                                         listViewIndex];
                                                 return Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 12.0,
                                                           12.0, 12.0),
                                                   child: InkWell(
@@ -355,7 +350,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: [
+                                                        boxShadow: const [
                                                           BoxShadow(
                                                             blurRadius: 4.0,
                                                             color: Color(
@@ -378,7 +373,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       .of(
                                                                           context)
                                                                   .primary
-                                                              : Color(
+                                                              : const Color(
                                                                   0x00000000),
                                                           width: 2.0,
                                                         ),
@@ -397,7 +392,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       .of(context)
                                                                   .secondary,
                                                               borderRadius:
-                                                                  BorderRadius
+                                                                  const BorderRadius
                                                                       .only(
                                                                 bottomLeft: Radius
                                                                     .circular(
@@ -415,7 +410,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(
                                                                           12.0),
                                                               child: Column(
@@ -465,7 +460,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         12.0,
                                                                         12.0,
@@ -584,7 +579,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         8.0, 20.0, 8.0, 0.0),
                                     child: FutureBuilder<List<TarefaRow>>(
                                       future: TarefaTable().queryRows(
@@ -626,7 +621,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            boxShadow: [
+                                            boxShadow: const [
                                               BoxShadow(
                                                 blurRadius: 6.0,
                                                 color: Color(0x1B090F13),
@@ -643,10 +638,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(16.0, 12.0, 0.0,
                                                           12.0),
                                                   child: Text(
@@ -666,14 +661,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 8.0, 0.0, 0.0),
                                                   child: Column(
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            Alignment(0.0, 0),
+                                                            const Alignment(0.0, 0),
                                                         child: TabBar(
                                                           isScrollable: true,
                                                           labelColor:
@@ -695,7 +690,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                         0.0,
                                                                   ),
                                                           unselectedLabelStyle:
-                                                              TextStyle(),
+                                                              const TextStyle(),
                                                           indicatorColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -760,7 +755,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           12.0,
@@ -796,7 +791,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           tarefasEmAndamento[
                                                                               tarefasEmAndamentoIndex];
                                                                       return Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -820,7 +815,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(12.0),
+                                                                                const EdgeInsets.all(12.0),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -834,7 +829,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                       ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     tarefasEmAndamentoItem.descricao!,
                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -861,7 +856,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                     ),
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           dateTimeFormat(
                                                                                             "relative",
@@ -907,7 +902,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                           color: FlutterFlowTheme.of(context).secondary,
                                                                                           borderRadius: BorderRadius.circular(32.0),
                                                                                         ),
-                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                         child: Text(
                                                                                           tarefasEmAndamentoItem.status!,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -933,7 +928,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           12.0,
@@ -969,7 +964,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           tarefaNaoIniciado[
                                                                               tarefaNaoIniciadoIndex];
                                                                       return Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -993,7 +988,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(12.0),
+                                                                                const EdgeInsets.all(12.0),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -1007,7 +1002,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                       ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     tarefaNaoIniciadoItem.descricao!,
                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -1034,7 +1029,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                     ),
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           dateTimeFormat(
                                                                                             "relative",
@@ -1080,7 +1075,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                           color: FlutterFlowTheme.of(context).tertiary,
                                                                                           borderRadius: BorderRadius.circular(32.0),
                                                                                         ),
-                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                         child: Text(
                                                                                           tarefaNaoIniciadoItem.status!,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1106,7 +1101,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           12.0,
@@ -1142,7 +1137,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           tarefaConcluido[
                                                                               tarefaConcluidoIndex];
                                                                       return Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1166,7 +1161,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(12.0),
+                                                                                const EdgeInsets.all(12.0),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -1180,7 +1175,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                       ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     tarefaConcluidoItem.descricao!,
                                                                                     style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -1207,7 +1202,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                     ),
                                                                                     Expanded(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           dateTimeFormat(
                                                                                             "relative",
@@ -1253,7 +1248,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                                           color: FlutterFlowTheme.of(context).secondaryText,
                                                                                           borderRadius: BorderRadius.circular(32.0),
                                                                                         ),
-                                                                                        alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                        alignment: const AlignmentDirectional(0.0, 0.0),
                                                                                         child: Text(
                                                                                           tarefaConcluidoItem.status!,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(

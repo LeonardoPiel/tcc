@@ -1,15 +1,4 @@
-import 'dart:convert';
-import 'dart:math' as math;
 
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
-import 'package:timeago/timeago.dart' as timeago;
-import 'lat_lng.dart';
-import 'place.dart';
-import 'uploaded_file.dart';
-import '/backend/supabase/supabase.dart';
-import '/auth/supabase_auth/auth_util.dart';
 
 DateTime stringToDate(String string) {
   // vou informar uma string com numeros e / e preciso converter para o formato data yyyy-mm-dd
@@ -23,9 +12,29 @@ DateTime stringToDate(String string) {
 }
 
 double currencyRealDouble(String input) {
-  // remover todos os caracteres não numéricos e converter em double com decimal .
-  if (input == null) return 0;
-  final onlyDigits = input.replaceAll(RegExp(r'[^0-9]'), '');
-  final value = double.parse(onlyDigits) / 100.0;
-  return value;
+// Tratando entradas vazias
+  if (input.isEmpty) return 0.0;
+
+  // Remove todos os caracteres não numéricos
+  var noSpecialChar = input.replaceAll(RegExp(r'[^0-9.,-]'), '');
+
+  // verifica se é negativo.
+  final isNegative = noSpecialChar.startsWith('-');
+  if (isNegative) {
+    noSpecialChar = noSpecialChar.substring(1);
+  }
+
+  // Substitui vírgula por ponto.
+  final normalizedInput = noSpecialChar.replaceAll(',', '.');
+
+  final parts = normalizedInput.split('.');
+  final intPart = parts[0];
+  final decimalPart = parts.length > 1 ? parts[1] : '00';
+
+  final combinedInput = '$intPart,$decimalPart';
+
+  final value = double.tryParse(combinedInput) ?? 0.0;
+
+  return isNegative ? -value : value;
 }
+

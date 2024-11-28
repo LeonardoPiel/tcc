@@ -9,7 +9,7 @@ class ProjetoTable extends SupabaseTable<ProjetoRow> {
 }
 
 class ProjetoRow extends SupabaseDataRow {
-  ProjetoRow(Map<String, dynamic> data) : super(data);
+  ProjetoRow(super.data);
 
   @override
   SupabaseTable get table => ProjetoTable();

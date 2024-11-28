@@ -7,15 +7,10 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/menu/side_menu/side_menu_widget.dart';
 import '/paginas/app_nav_bar/app_nav_bar_widget.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'financeiro_model.dart';
 export 'financeiro_model.dart';
 
@@ -82,7 +77,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
             wrapWithModel(
               model: _model.appNavBarModel,
               updateCallback: () => safeSetState(() {}),
-              child: AppNavBarWidget(),
+              child: const AppNavBarWidget(),
             ),
             Flexible(
               child: Row(
@@ -92,13 +87,13 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                   wrapWithModel(
                     model: _model.sideMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: SideMenuWidget(
+                    child: const SideMenuWidget(
                       selectedNav: 'financeiro',
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Container(
                         decoration: BoxDecoration(
                           color:
@@ -110,7 +105,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 12.0, 0.0, 12.0),
                               child: Text(
                                 'Financeiro',
@@ -168,15 +163,14 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
 
                                         return Container(
                                           height: 700.0,
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             maxWidth: 700.0,
                                           ),
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: Builder(
                                             builder: (context) {
                                               if (containerMovimentacaoMovimentacaoLancamentoViewRowList
-                                                      .length >
-                                                  0) {
+                                                  .isNotEmpty) {
                                                 return SingleChildScrollView(
                                                   child: Column(
                                                     mainAxisSize:
@@ -187,16 +181,16 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                     children: [
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 0.0),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      12.0,
-                                                                      12.0),
+                                                                  0.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  12.0),
                                                           child: Text(
                                                             valueOrDefault<
                                                                 String>(
@@ -251,8 +245,9 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
 
                                                           return ListView
                                                               .separated(
-                                                            padding: EdgeInsets
-                                                                .symmetric(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .symmetric(
                                                                     vertical:
                                                                         8.0),
                                                             primary: false,
@@ -262,11 +257,11 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                             itemCount:
                                                                 containerMovimentacaoVar
                                                                     .length,
-                                                            separatorBuilder:
-                                                                (_, __) =>
-                                                                    SizedBox(
-                                                                        height:
-                                                                            8.0),
+                                                            separatorBuilder: (_,
+                                                                    __) =>
+                                                                const SizedBox(
+                                                                    height:
+                                                                        8.0),
                                                             itemBuilder: (context,
                                                                 containerMovimentacaoVarIndex) {
                                                               final containerMovimentacaoVarItem =
@@ -359,14 +354,16 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                                         () {
                                                                       _model.textFieldValorTextController
                                                                               ?.text =
-                                                                          functions
-                                                                              .currencyRealDouble(formatNumber(
-                                                                                containerMovimentacaoVarItem.valor!,
-                                                                                formatType: FormatType.decimal,
-                                                                                decimalType: DecimalType.commaDecimal,
-                                                                                currency: 'R\$ ',
-                                                                              ))
-                                                                              .toString();
+                                                                          formatNumber(
+                                                                        containerMovimentacaoVarItem
+                                                                            .valor!,
+                                                                        formatType:
+                                                                            FormatType.decimal,
+                                                                        decimalType:
+                                                                            DecimalType.commaDecimal,
+                                                                        currency:
+                                                                            'R\$ ',
+                                                                      );
                                                                       _model
                                                                           .textFieldValorFocusNode
                                                                           ?.requestFocus();
@@ -515,7 +512,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                                             .primary
                                                                         : FlutterFlowTheme.of(context)
                                                                             .secondaryBackground,
-                                                                    boxShadow: [
+                                                                    boxShadow: const [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             4.0,
@@ -534,12 +531,12 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                                   ),
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            8.0,
-                                                                            4.0,
-                                                                            8.0,
-                                                                            4.0),
+                                                                        8.0,
+                                                                        4.0,
+                                                                        8.0,
+                                                                        4.0),
                                                                     child: Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -552,14 +549,14 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                                                 MainAxisSize.max,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   children: [
                                                                                     Flexible(
                                                                                       child: Container(
-                                                                                        decoration: BoxDecoration(),
+                                                                                        decoration: const BoxDecoration(),
                                                                                         child: Row(
                                                                                           mainAxisSize: MainAxisSize.max,
                                                                                           children: [
@@ -595,22 +592,22 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                                                                     letterSpacing: 0.0,
                                                                                                   ),
                                                                                             ),
-                                                                                          ].divide(SizedBox(width: 12.0)),
+                                                                                          ].divide(const SizedBox(width: 12.0)),
                                                                                         ),
                                                                                       ),
                                                                                     ),
-                                                                                  ].divide(SizedBox(width: 8.0)),
+                                                                                  ].divide(const SizedBox(width: 8.0)),
                                                                                 ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                   children: [
                                                                                     Flexible(
                                                                                       child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(86.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(86.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           containerMovimentacaoVarItem.descricao!,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -621,14 +618,15 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                                                         ),
                                                                                       ),
                                                                                     ),
-                                                                                  ].divide(SizedBox(width: 8.0)),
+                                                                                  ].divide(const SizedBox(width: 8.0)),
                                                                                 ),
                                                                               ),
                                                                             ],
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional
+                                                                              .fromSTEB(
                                                                               4.0,
                                                                               0.0,
                                                                               4.0,
@@ -698,7 +696,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(12.0),
+                                    padding: const EdgeInsets.all(12.0),
                                     child: Container(
                                       width: 400.0,
                                       decoration: BoxDecoration(
@@ -740,7 +738,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                                           .w500,
                                                                 ),
                                                       ),
-                                                      TextSpan(
+                                                      const TextSpan(
                                                         text: ' Lançamento',
                                                         style: TextStyle(),
                                                       )
@@ -848,12 +846,12 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          8.0,
-                                                                          4.0,
-                                                                          8.0,
-                                                                          4.0),
+                                                                      8.0,
+                                                                      4.0,
+                                                                      8.0,
+                                                                      4.0),
                                                               child: Text(
                                                                 wrapLancamentoTipoRow
                                                                     .apelido!,
@@ -897,12 +895,9 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                         null)
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    12.0),
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(0.0,
+                                                                0.0, 0.0, 12.0),
                                                         child: Container(
                                                           decoration:
                                                               BoxDecoration(
@@ -932,7 +927,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Text(
@@ -950,7 +945,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    AlignmentDirectional(
+                                                                    const AlignmentDirectional(
                                                                         -1.0,
                                                                         0.0),
                                                                 child: Text(
@@ -973,131 +968,152 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                   ],
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 8.0, 0.0, 8.0),
-                                                  child: FutureBuilder<
-                                                      List<ClienteRow>>(
-                                                    future: ClienteTable()
-                                                        .queryRows(
-                                                      queryFn: (q) => q.order(
-                                                          'nome',
-                                                          ascending: true),
-                                                    ),
-                                                    builder:
-                                                        (context, snapshot) {
-                                                      // Customize what your widget looks like when it's loading.
-                                                      if (!snapshot.hasData) {
-                                                        return Center(
-                                                          child: SizedBox(
-                                                            width: 50.0,
-                                                            height: 50.0,
-                                                            child:
-                                                                CircularProgressIndicator(
-                                                              valueColor:
-                                                                  AlwaysStoppedAnimation<
-                                                                      Color>(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0.0, 8.0, 0.0, 8.0),
+                                                    child: FutureBuilder<
+                                                        List<ClienteRow>>(
+                                                      future: ClienteTable()
+                                                          .queryRows(
+                                                        queryFn: (q) => q.order(
+                                                            'nome',
+                                                            ascending: true),
+                                                      ),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (snapshot
+                                                                .connectionState ==
+                                                            ConnectionState
+                                                                .waiting) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation<
+                                                                        Color>(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                ),
                                                               ),
                                                             ),
-                                                          ),
-                                                        );
-                                                      }
-                                                      List<ClienteRow>
-                                                          dropDownClienteClienteRowList =
-                                                          snapshot.data!;
-
-                                                      return FlutterFlowDropDown<
-                                                          int>(
-                                                        controller: _model
-                                                                .dropDownClienteValueController ??=
-                                                            FormFieldController<
-                                                                int>(
-                                                          _model.dropDownClienteValue ??=
-                                                              dropDownClienteClienteRowList
-                                                                  .first.id,
-                                                        ),
-                                                        options: List<int>.from(
-                                                            dropDownClienteClienteRowList
-                                                                .map(
-                                                                    (e) => e.id)
-                                                                .toList()),
-                                                        optionLabels:
-                                                            dropDownClienteClienteRowList
-                                                                .map((e) =>
-                                                                    e.nome)
-                                                                .withoutNulls
-                                                                .toList(),
-                                                        onChanged: (val) async {
-                                                          safeSetState(() =>
-                                                              _model.dropDownClienteValue =
-                                                                  val);
-                                                          _model.queryCliente =
-                                                              await ClienteTable()
-                                                                  .queryRows(
-                                                            queryFn: (q) =>
-                                                                q.eqOrNull(
-                                                              'id',
-                                                              _model
-                                                                  .dropDownClienteValue,
-                                                            ),
                                                           );
-                                                          _model.cliente =
-                                                              _model
-                                                                  .queryCliente
-                                                                  ?.first;
-                                                          safeSetState(() {});
+                                                        } else if (snapshot
+                                                            .hasError) {
+                                                          return Center(
+                                                            child: Text(
+                                                                'Error: ${snapshot.error}'),
+                                                          );
+                                                        } else if (!snapshot
+                                                                .hasData ||
+                                                            snapshot.data!
+                                                                .isEmpty) {
+                                                          return Center(
+                                                            child: Text(
+                                                                'No data available'),
+                                                          );
+                                                        }
 
-                                                          safeSetState(() {});
-                                                        },
-                                                        height: 40.0,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                        hintText:
-                                                            'Selecione o cliente',
-                                                        icon: Icon(
-                                                          Icons
-                                                              .keyboard_arrow_down_rounded,
-                                                          color: FlutterFlowTheme
+                                                        List<ClienteRow>
+                                                            dropDownClienteClienteRowList =
+                                                            snapshot.data!;
+
+                                                        return FlutterFlowDropDown<
+                                                            int>(
+                                                          controller: _model
+                                                                  .dropDownClienteValueController ??=
+                                                              FormFieldController<
+                                                                  int>(
+                                                            _model.dropDownClienteValue ??=
+                                                                dropDownClienteClienteRowList
+                                                                        .isNotEmpty
+                                                                    ? dropDownClienteClienteRowList
+                                                                        .first
+                                                                        .id
+                                                                    : null,
+                                                          ),
+                                                          options: List<
+                                                                  int>.from(
+                                                              dropDownClienteClienteRowList
+                                                                  .map((e) =>
+                                                                      e.id)
+                                                                  .toList()),
+                                                          optionLabels:
+                                                              dropDownClienteClienteRowList
+                                                                  .map((e) =>
+                                                                      e.nome)
+                                                                  .withoutNulls
+                                                                  .toList(),
+                                                          onChanged:
+                                                              (val) async {
+                                                            safeSetState(() =>
+                                                                _model.dropDownClienteValue =
+                                                                    val);
+                                                            _model.queryCliente =
+                                                                await ClienteTable()
+                                                                    .queryRows(
+                                                              queryFn: (q) =>
+                                                                  q.eqOrNull(
+                                                                      'id',
+                                                                      _model
+                                                                          .dropDownClienteValue),
+                                                            );
+                                                            _model.cliente =
+                                                                _model
+                                                                    .queryCliente
+                                                                    ?.first;
+                                                            safeSetState(() {});
+                                                          },
+                                                          height: 40.0,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          hintText:
+                                                              'Selecione o cliente',
+                                                          icon: Icon(
+                                                            Icons
+                                                                .keyboard_arrow_down_rounded,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryText,
+                                                            size: 24.0,
+                                                          ),
+                                                          fillColor: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryText,
-                                                          size: 24.0,
-                                                        ),
-                                                        fillColor: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        elevation: 2.0,
-                                                        borderColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .alternate,
-                                                        borderWidth: 0.0,
-                                                        borderRadius: 8.0,
-                                                        margin:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
-                                                        hidesUnderline: true,
-                                                        isOverButton: false,
-                                                        isSearchable: false,
-                                                        isMultiSelect: false,
-                                                      );
-                                                    },
-                                                  ),
-                                                ),
+                                                              .secondaryBackground,
+                                                          elevation: 2.0,
+                                                          borderColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .alternate,
+                                                          borderWidth: 0.0,
+                                                          borderRadius: 8.0,
+                                                          margin:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0),
+                                                          hidesUnderline: true,
+                                                          isOverButton: false,
+                                                          isSearchable: false,
+                                                          isMultiSelect: false,
+                                                        );
+                                                      },
+                                                    )),
                                                 if (_model.cliente != null)
                                                   InkWell(
                                                     splashColor:
@@ -1127,15 +1143,12 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                     },
                                                     child: Container(
                                                       decoration:
-                                                          BoxDecoration(),
+                                                          const BoxDecoration(),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    8.0,
-                                                                    0.0,
-                                                                    8.0),
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(0.0,
+                                                                8.0, 0.0, 8.0),
                                                         child: FutureBuilder<
                                                             List<ProjetoRow>>(
                                                           future: ProjetoTable()
@@ -1233,12 +1246,12 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                               borderWidth: 0.0,
                                                               borderRadius: 8.0,
                                                               margin:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12.0,
-                                                                          0.0,
-                                                                          12.0,
-                                                                          0.0),
+                                                                      12.0,
+                                                                      0.0,
+                                                                      12.0,
+                                                                      0.0),
                                                               hidesUnderline:
                                                                   true,
                                                               isOverButton:
@@ -1258,9 +1271,9 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                     'PAG-FOR')
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 8.0,
-                                                                0.0, 8.0),
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0.0, 8.0, 0.0, 8.0),
                                                     child: FutureBuilder<
                                                         List<UsuarioRow>>(
                                                       future: UsuarioTable()
@@ -1322,6 +1335,9 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                             safeSetState(() =>
                                                                 _model.dropDownUsuarioValue =
                                                                     val);
+                                                            _model.usuario =
+                                                                null;
+                                                            safeSetState(() {});
                                                             _model.queryUsuario =
                                                                 await UsuarioTable()
                                                                     .queryRows(
@@ -1369,12 +1385,12 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                           borderWidth: 0.0,
                                                           borderRadius: 8.0,
                                                           margin:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      12.0,
-                                                                      0.0,
-                                                                      12.0,
-                                                                      0.0),
+                                                                  12.0,
+                                                                  0.0,
+                                                                  12.0,
+                                                                  0.0),
                                                           hidesUnderline: true,
                                                           isOverButton: false,
                                                           isSearchable: false,
@@ -1384,8 +1400,9 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                     ),
                                                   ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(
                                                           0.0, 8.0, 0.0, 8.0),
                                                   child: Row(
                                                     mainAxisSize:
@@ -1394,7 +1411,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                         MainAxisAlignment
                                                             .spaceBetween,
                                                     children: [
-                                                      Container(
+                                                      SizedBox(
                                                         width: 200.0,
                                                         child: TextFormField(
                                                           controller: _model
@@ -1405,49 +1422,11 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                               EasyDebounce
                                                                   .debounce(
                                                             '_model.textFieldValorTextController',
-                                                            Duration(
+                                                            const Duration(
                                                                 milliseconds:
                                                                     10),
-                                                            () async {
-                                                              safeSetState(() {
-                                                                _model.textFieldValorTextController
-                                                                        ?.text =
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                  formatNumber(
-                                                                    functions.currencyRealDouble(_model
-                                                                        .textFieldValorTextController
-                                                                        .text),
-                                                                    formatType:
-                                                                        FormatType
-                                                                            .decimal,
-                                                                    decimalType:
-                                                                        DecimalType
-                                                                            .commaDecimal,
-                                                                    currency:
-                                                                        'R\$ ',
-                                                                  ),
-                                                                  '0',
-                                                                );
-                                                                _model
-                                                                    .textFieldValorFocusNode
-                                                                    ?.requestFocus();
-                                                                WidgetsBinding
-                                                                    .instance
-                                                                    .addPostFrameCallback(
-                                                                        (_) {
-                                                                  _model.textFieldValorTextController
-                                                                          ?.selection =
-                                                                      TextSelection
-                                                                          .collapsed(
-                                                                    offset: _model
-                                                                        .textFieldValorTextController!
-                                                                        .text
-                                                                        .length,
-                                                                  );
-                                                                });
-                                                              });
-                                                            },
+                                                            () => safeSetState(
+                                                                () {}),
                                                           ),
                                                           autofocus: false,
                                                           obscureText: false,
@@ -1493,7 +1472,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
-                                                                  BorderSide(
+                                                                  const BorderSide(
                                                                 color: Color(
                                                                     0x00000000),
                                                                 width: 1.0,
@@ -1545,6 +1524,9 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
+                                                          keyboardType:
+                                                              TextInputType
+                                                                  .number,
                                                           cursorColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1566,7 +1548,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                         options:
                                                             List<bool>.from(
                                                                 [false, true]),
-                                                        optionLabels: [
+                                                        optionLabels: const [
                                                           'Em aberto',
                                                           'Pago'
                                                         ],
@@ -1606,26 +1588,24 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(12.0,
+                                                                0.0, 12.0, 0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: false,
                                                         isSearchable: false,
                                                         isMultiSelect: false,
                                                       ),
-                                                    ].divide(
-                                                        SizedBox(width: 8.0)),
+                                                    ].divide(const SizedBox(
+                                                        width: 8.0)),
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(
                                                           0.0, 8.0, 0.0, 8.0),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -1676,7 +1656,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                         focusedBorder:
                                                             OutlineInputBorder(
                                                           borderSide:
-                                                              BorderSide(
+                                                              const BorderSide(
                                                             color: Color(
                                                                 0x00000000),
                                                             width: 1.0,
@@ -1747,7 +1727,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Expanded(
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: 200.0,
                                                   child: TextFormField(
                                                     controller: _model
@@ -1797,7 +1777,8 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide:
+                                                            const BorderSide(
                                                           color:
                                                               Color(0x00000000),
                                                           width: 1.0,
@@ -1858,13 +1839,13 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                 fillColor:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                icon: Icon(
+                                                icon: const Icon(
                                                   Icons.calendar_month,
                                                   color: Colors.white,
                                                   size: 24.0,
                                                 ),
                                                 onPressed: () async {
-                                                  final _datePicked1Date =
+                                                  final datePicked1Date =
                                                       await showDatePicker(
                                                     context: context,
                                                     initialDate:
@@ -1923,14 +1904,13 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                     },
                                                   );
 
-                                                  if (_datePicked1Date !=
-                                                      null) {
+                                                  if (datePicked1Date != null) {
                                                     safeSetState(() {
                                                       _model.datePicked1 =
                                                           DateTime(
-                                                        _datePicked1Date.year,
-                                                        _datePicked1Date.month,
-                                                        _datePicked1Date.day,
+                                                        datePicked1Date.year,
+                                                        datePicked1Date.month,
+                                                        datePicked1Date.day,
                                                       );
                                                     });
                                                   }
@@ -1967,7 +1947,8 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                   safeSetState(() {});
                                                 },
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(
+                                                const SizedBox(width: 8.0)),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1975,7 +1956,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Expanded(
-                                                child: Container(
+                                                child: SizedBox(
                                                   width: 200.0,
                                                   child: TextFormField(
                                                     controller: _model
@@ -2025,7 +2006,8 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                       ),
                                                       focusedBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: BorderSide(
+                                                        borderSide:
+                                                            const BorderSide(
                                                           color:
                                                               Color(0x00000000),
                                                           width: 1.0,
@@ -2087,13 +2069,13 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                 fillColor:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                icon: Icon(
+                                                icon: const Icon(
                                                   Icons.calendar_month,
                                                   color: Colors.white,
                                                   size: 24.0,
                                                 ),
                                                 onPressed: () async {
-                                                  final _datePicked2Date =
+                                                  final datePicked2Date =
                                                       await showDatePicker(
                                                     context: context,
                                                     initialDate:
@@ -2152,14 +2134,13 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                     },
                                                   );
 
-                                                  if (_datePicked2Date !=
-                                                      null) {
+                                                  if (datePicked2Date != null) {
                                                     safeSetState(() {
                                                       _model.datePicked2 =
                                                           DateTime(
-                                                        _datePicked2Date.year,
-                                                        _datePicked2Date.month,
-                                                        _datePicked2Date.day,
+                                                        datePicked2Date.year,
+                                                        datePicked2Date.month,
+                                                        datePicked2Date.day,
                                                       );
                                                     });
                                                   }
@@ -2196,7 +2177,8 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                   safeSetState(() {});
                                                 },
                                               ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                            ].divide(
+                                                const SizedBox(width: 8.0)),
                                           ),
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -2245,7 +2227,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                               if (_model.lancamento != null)
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           1.0, 0.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
@@ -2266,19 +2248,13 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  16.0,
-                                                                  0.0,
-                                                                  16.0,
-                                                                  0.0),
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(16.0,
+                                                              0.0, 16.0, 0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(0.0,
+                                                              0.0, 0.0, 0.0),
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -2304,7 +2280,7 @@ class _FinanceiroWidgetState extends State<FinanceiroWidget> {
                                                 ),
                                             ],
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
                                     ),
                                   ),

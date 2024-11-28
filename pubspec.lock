@@ -374,7 +374,7 @@ packages:
     source: hosted
     version: "1.2.2"
   http_parser:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http_parser
       sha256: "2aa08ce0341cc9b354a498388e30986515406668dbcc4f7c950c3e715496693b"
@@ -573,6 +573,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  mock_supabase_http_client:
+    dependency: "direct dev"
+    description:
+      name: mock_supabase_http_client
+      sha256: f78afef16035bef4f52897f4e46a60cf623be4251ed0624fa0713705b159e340
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3+1"
   nested:
     dependency: transitive
     description:

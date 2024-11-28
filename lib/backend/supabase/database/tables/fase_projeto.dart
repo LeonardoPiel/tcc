@@ -9,7 +9,7 @@ class FaseProjetoTable extends SupabaseTable<FaseProjetoRow> {
 }
 
 class FaseProjetoRow extends SupabaseDataRow {
-  FaseProjetoRow(Map<String, dynamic> data) : super(data);
+  FaseProjetoRow(super.data);
 
   @override
   SupabaseTable get table => FaseProjetoTable();

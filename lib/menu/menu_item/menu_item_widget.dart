@@ -2,8 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'menu_item_model.dart';
 export 'menu_item_model.dart';
 
@@ -17,7 +15,7 @@ class MenuItemWidget extends StatefulWidget {
     required this.menuIcon,
     required this.navigateTo,
     required this.showToAll,
-  }) : this.isMenuExpanded = isMenuExpanded ?? false;
+  }) : isMenuExpanded = isMenuExpanded ?? false;
 
   final double? menuSize;
   final double? hoveredMenuSize;
@@ -47,7 +45,7 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.menuText = widget!.menuTitle;
+      _model.menuText = widget.menuTitle;
       safeSetState(() {});
     });
 
@@ -64,18 +62,24 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: widget!.showToAll ?? true,
+      visible: widget.showToAll ?? true,
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
         child: MouseRegion(
           opaque: false,
           cursor: MouseCursor.defer ?? MouseCursor.defer,
+          onEnter: ((event) async {
+            safeSetState(() => _model.itemHoverHovered = true);
+          }),
+          onExit: ((event) async {
+            safeSetState(() => _model.itemHoverHovered = false);
+          }),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
             child: SafeArea(
               child: Container(
                 width: 150.0,
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(
                       0.0,
@@ -100,9 +104,9 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        widget!.menuIcon!,
-                        if ((widget!.menuSize == widget!.hoveredMenuSize) &&
-                            widget!.isMenuExpanded)
+                        widget.menuIcon!,
+                        if ((widget.menuSize == widget.hoveredMenuSize) &&
+                            widget.isMenuExpanded)
                           Expanded(
                             child: Text(
                               valueOrDefault<String>(
@@ -130,12 +134,6 @@ class _MenuItemWidgetState extends State<MenuItemWidget> {
               ),
             ),
           ),
-          onEnter: ((event) async {
-            safeSetState(() => _model.itemHoverHovered = true);
-          }),
-          onExit: ((event) async {
-            safeSetState(() => _model.itemHoverHovered = false);
-          }),
         ),
       ),
     );

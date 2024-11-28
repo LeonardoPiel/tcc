@@ -10,7 +10,7 @@ class ProjetoColaboradorTable extends SupabaseTable<ProjetoColaboradorRow> {
 }
 
 class ProjetoColaboradorRow extends SupabaseDataRow {
-  ProjetoColaboradorRow(Map<String, dynamic> data) : super(data);
+  ProjetoColaboradorRow(super.data);
 
   @override
   SupabaseTable get table => ProjetoColaboradorTable();

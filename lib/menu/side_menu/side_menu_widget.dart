@@ -5,8 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/menu/menu_item/menu_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'side_menu_model.dart';
 export 'side_menu_model.dart';
 
@@ -15,7 +13,7 @@ class SideMenuWidget extends StatefulWidget {
     super.key,
     String? selectedNav,
     this.menuIcon,
-  }) : this.selectedNav = selectedNav ?? 'home';
+  }) : selectedNav = selectedNav ?? 'home';
 
   final String selectedNav;
   final Widget? menuIcon;
@@ -51,10 +49,20 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
       child: MouseRegion(
         opaque: false,
         cursor: MouseCursor.defer ?? MouseCursor.defer,
+        onEnter: ((event) async {
+          safeSetState(() => _model.menuHoverHovered = true);
+          await _model.expand(context);
+          safeSetState(() {});
+        }),
+        onExit: ((event) async {
+          safeSetState(() => _model.menuHoverHovered = false);
+          await _model.retract(context);
+          safeSetState(() {});
+        }),
         child: FutureBuilder<List<UsuarioRow>>(
           future: UsuarioTable().querySingleRow(
             queryFn: (q) => q.eqOrNull(
@@ -85,20 +93,20 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
 
             return SafeArea(
               child: ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(0.0),
                   bottomRight: Radius.circular(8.0),
                   topLeft: Radius.circular(0.0),
                   topRight: Radius.circular(8.0),
                 ),
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 150),
+                  duration: const Duration(milliseconds: 150),
                   curve: Curves.easeInOut,
                   width: _model.menuSize,
                   height: double.infinity,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).alternate,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(8.0),
                       topLeft: Radius.circular(0.0),
@@ -242,9 +250,9 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
                         ),
                         Expanded(
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 32.0, 0.0, 16.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -276,16 +284,6 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
             );
           },
         ),
-        onEnter: ((event) async {
-          safeSetState(() => _model.menuHoverHovered = true);
-          await _model.expand(context);
-          safeSetState(() {});
-        }),
-        onExit: ((event) async {
-          safeSetState(() => _model.menuHoverHovered = false);
-          await _model.retract(context);
-          safeSetState(() {});
-        }),
       ),
     );
   }

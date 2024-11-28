@@ -7,13 +7,9 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/menu/side_menu/side_menu_widget.dart';
 import '/paginas/app_nav_bar/app_nav_bar_widget.dart';
-import 'dart:math';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'biblioteca_model.dart';
 export 'biblioteca_model.dart';
 
@@ -63,8 +59,8 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(30.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(30.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -82,8 +78,8 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(30.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(30.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -119,7 +115,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
             wrapWithModel(
               model: _model.appNavBarModel,
               updateCallback: () => safeSetState(() {}),
-              child: AppNavBarWidget(),
+              child: const AppNavBarWidget(),
             ),
             Flexible(
               child: Row(
@@ -129,15 +125,15 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                   wrapWithModel(
                     model: _model.sideMenuModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: SideMenuWidget(
+                    child: const SideMenuWidget(
                       selectedNav: 'biblioteca',
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        constraints: BoxConstraints(
+                        constraints: const BoxConstraints(
                           maxHeight: 1000.0,
                         ),
                         decoration: BoxDecoration(
@@ -151,7 +147,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(12.0),
+                              padding: const EdgeInsets.all(12.0),
                               child: FutureBuilder<List<ProjetoRow>>(
                                 future: ProjetoTable().queryRows(
                                   queryFn: (q) => q,
@@ -193,7 +189,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                           child: Column(
                                             children: [
                                               Align(
-                                                alignment: Alignment(0.0, 0),
+                                                alignment: const Alignment(0.0, 0),
                                                 child: TabBar(
                                                   labelColor:
                                                       FlutterFlowTheme.of(
@@ -225,7 +221,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .primary,
-                                                  tabs: [
+                                                  tabs: const [
                                                     Tab(
                                                       text: 'Projetos Ativos',
                                                     ),
@@ -296,7 +292,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                         containerProjetosVarAtivo[
                                                                             containerProjetosVarAtivoIndex];
                                                                     return Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           12.0,
                                                                           12.0,
@@ -357,7 +353,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                               BoxDecoration(
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            boxShadow: [
+                                                                            boxShadow: const [
                                                                               BoxShadow(
                                                                                 blurRadius: 4.0,
                                                                                 color: Color(0x34090F13),
@@ -371,14 +367,14 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                                 BorderRadius.circular(8.0),
                                                                             border:
                                                                                 Border.all(
-                                                                              color: containerProjetosVarAtivoItem.id == _model.projeto?.id ? FlutterFlowTheme.of(context).primary : Color(0x00000000),
+                                                                              color: containerProjetosVarAtivoItem.id == _model.projeto?.id ? FlutterFlowTheme.of(context).primary : const Color(0x00000000),
                                                                               width: 2.0,
                                                                             ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding:
-                                                                                EdgeInsets.all(8.0),
+                                                                                const EdgeInsets.all(8.0),
                                                                             child:
                                                                                 Column(
                                                                               mainAxisSize: MainAxisSize.min,
@@ -457,7 +453,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                       containerProjetosVarInativo[
                                                                           containerProjetosVarInativoIndex];
                                                                   return Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             12.0,
@@ -518,7 +514,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          boxShadow: [
+                                                                          boxShadow: const [
                                                                             BoxShadow(
                                                                               blurRadius: 4.0,
                                                                               color: Color(0x34090F13),
@@ -534,7 +530,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                               Border.all(
                                                                             color: containerProjetosVarInativoItem.id == _model.projeto?.id
                                                                                 ? FlutterFlowTheme.of(context).primary
-                                                                                : Color(0x00000000),
+                                                                                : const Color(0x00000000),
                                                                             width:
                                                                                 2.0,
                                                                           ),
@@ -542,7 +538,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              EdgeInsets.all(8.0),
+                                                                              const EdgeInsets.all(8.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -583,7 +579,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                             ],
                                           ),
                                         ),
-                                      ].divide(SizedBox(width: 20.0)),
+                                      ].divide(const SizedBox(width: 20.0)),
                                     ),
                                   );
                                 },
@@ -604,9 +600,9 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           child: Container(
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -614,7 +610,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Text(
                                                     'Biblioteca',
@@ -639,10 +635,10 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                     Flexible(
                                                       child: Container(
                                                         decoration:
-                                                            BoxDecoration(),
+                                                            const BoxDecoration(),
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
+                                                              const AlignmentDirectional(
                                                                   0.0, -1.0),
                                                           child: Text(
                                                             'Nome',
@@ -669,15 +665,15 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                         Container(
                                                           width: 80.0,
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                         ),
                                                         Container(
                                                           width: 80.0,
                                                           decoration:
-                                                              BoxDecoration(),
+                                                              const BoxDecoration(),
                                                         ),
                                                       ].divide(
-                                                          SizedBox(width: 8.0)),
+                                                          const SizedBox(width: 8.0)),
                                                     ),
                                                   ],
                                                 ),
@@ -728,7 +724,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                               .length,
                                                       separatorBuilder: (_,
                                                               __) =>
-                                                          SizedBox(height: 8.0),
+                                                          const SizedBox(height: 8.0),
                                                       itemBuilder: (context,
                                                           listViewBibliotecaIndex) {
                                                         final listViewBibliotecaBibliotecaProjetoRow =
@@ -808,7 +804,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                           },
                                                           child: Container(
                                                             constraints:
-                                                                BoxConstraints(
+                                                                const BoxConstraints(
                                                               minHeight: 36.0,
                                                             ),
                                                             decoration:
@@ -824,7 +820,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                   : FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                              boxShadow: [
+                                                              boxShadow: const [
                                                                 BoxShadow(
                                                                   blurRadius:
                                                                       4.0,
@@ -844,7 +840,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(8.0),
                                                               child: Row(
                                                                 mainAxisSize:
@@ -875,11 +871,11 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                         MainAxisSize
                                                                             .max,
                                                                     children: <Widget>[].divide(
-                                                                        SizedBox(
+                                                                        const SizedBox(
                                                                             width:
                                                                                 8.0)),
                                                                   ),
-                                                                ].divide(SizedBox(
+                                                                ].divide(const SizedBox(
                                                                     width:
                                                                         8.0)),
                                                               ),
@@ -890,14 +886,14 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                     );
                                                   },
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
                                       ),
                                       Expanded(
                                         child: Padding(
-                                          padding: EdgeInsets.all(16.0),
+                                          padding: const EdgeInsets.all(16.0),
                                           child: Container(
                                             decoration: BoxDecoration(
                                               color:
@@ -911,11 +907,11 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 12.0),
                                                     child: Text(
@@ -935,10 +931,10 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 0.0),
-                                                  child: Container(
+                                                  child: SizedBox(
                                                     width: double.infinity,
                                                     child: Form(
                                                       key: _model.formKey,
@@ -952,7 +948,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                             CrossAxisAlignment
                                                                 .center,
                                                         children: [
-                                                          Container(
+                                                          SizedBox(
                                                             width:
                                                                 double.infinity,
                                                             child:
@@ -1006,7 +1002,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1068,7 +1064,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                       context),
                                                             ),
                                                           ),
-                                                          Container(
+                                                          SizedBox(
                                                             width:
                                                                 double.infinity,
                                                             child:
@@ -1122,7 +1118,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                 focusedBorder:
                                                                     OutlineInputBorder(
                                                                   borderSide:
-                                                                      BorderSide(
+                                                                      const BorderSide(
                                                                     color: Color(
                                                                         0x00000000),
                                                                     width: 1.0,
@@ -1186,7 +1182,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                       context),
                                                             ),
                                                           ),
-                                                        ].divide(SizedBox(
+                                                        ].divide(const SizedBox(
                                                             height: 12.0)),
                                                       ),
                                                     ),
@@ -1205,7 +1201,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1240,17 +1236,17 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                             (alertDialogContext) {
                                                                           return AlertDialog(
                                                                             title:
-                                                                                Text('Deletar Biblioteca'),
+                                                                                const Text('Deletar Biblioteca'),
                                                                             content:
                                                                                 Text('Deseja realmente deletar a biblioteca ${_model.biblioteca?.titulo}?'),
                                                                             actions: [
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                child: Text('Cancelar'),
+                                                                                child: const Text('Cancelar'),
                                                                               ),
                                                                               TextButton(
                                                                                 onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                child: Text('Confirmar'),
+                                                                                child: const Text('Confirmar'),
                                                                               ),
                                                                             ],
                                                                           );
@@ -1295,7 +1291,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                             .primaryText,
                                                                       ),
                                                                     ),
-                                                                    duration: Duration(
+                                                                    duration: const Duration(
                                                                         milliseconds:
                                                                             4000),
                                                                     backgroundColor:
@@ -1311,7 +1307,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                             null)
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1358,7 +1354,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          AlignmentDirectional(
+                                                          const AlignmentDirectional(
                                                               1.0, 1.0),
                                                       child: FFButtonWidget(
                                                         onPressed: () async {
@@ -1411,7 +1407,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: Duration(
+                                                                  duration: const Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -1447,7 +1443,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                           .primaryText,
                                                                     ),
                                                                   ),
-                                                                  duration: Duration(
+                                                                  duration: const Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -1484,7 +1480,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                         .primaryText,
                                                                   ),
                                                                 ),
-                                                                duration: Duration(
+                                                                duration: const Duration(
                                                                     milliseconds:
                                                                         4000),
                                                                 backgroundColor:
@@ -1506,14 +1502,14 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
                                                                       16.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1551,7 +1547,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     12.0,
@@ -1573,7 +1569,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                               ),
                                                         ),
                                                       ),
-                                                      Container(
+                                                      SizedBox(
                                                         height: 200.0,
                                                         child: FutureBuilder<
                                                             List<
@@ -1635,7 +1631,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                       .length,
                                                               separatorBuilder: (_,
                                                                       __) =>
-                                                                  SizedBox(
+                                                                  const SizedBox(
                                                                       height:
                                                                           8.0),
                                                               itemBuilder: (context,
@@ -1650,7 +1646,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .secondaryBackground,
-                                                                    boxShadow: [
+                                                                    boxShadow: const [
                                                                       BoxShadow(
                                                                         blurRadius:
                                                                             4.0,
@@ -1670,7 +1666,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                   child:
                                                                       Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             12.0),
                                                                     child: Row(
                                                                       mainAxisSize:
@@ -1706,7 +1702,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
                                                                               12.0,
                                                                               0.0,
                                                                               0.0,
@@ -1752,7 +1748,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                       ),
                                                       Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 1.0, 1.0),
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
@@ -1837,14 +1833,14 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1875,7 +1871,7 @@ class _BibliotecaWidgetState extends State<BibliotecaWidget>
                                                       ),
                                                     ],
                                                   ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
